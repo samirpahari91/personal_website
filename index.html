@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Samir Pahari</title>
 <link rel="canonical" href="https://samirpahari91.github.io/personal_website/">
-<meta name="description" content="Samir Pahari, geoscientist and GeoAI researcher at The Ohio State University: deep learning for flood susceptibility, multi-mission Earth-observation datacubes, enterprise GIS and survey-grade field work.">
+<meta name="description" content="Samir Pahari, geoscientist at The Ohio State University specializing in remote sensing, GIS and machine/deep learning: flood and landslide hazards, soil erosion, Earth-observation datacubes. ArcGIS, ENVI, Google Earth Engine.">
 <meta name="author" content="Samir Pahari">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Samir Pahari — geoscientist & GeoAI researcher">
-<meta property="og:description" content="Deep learning for flood susceptibility, Earth-observation datacubes, enterprise GIS. PhD student at The Ohio State University, BuckAI Observatory lab.">
+<meta property="og:description" content="Remote sensing, GIS and machine/deep learning for hazards and Earth observation. PhD student at The Ohio State University, BuckAI Observatory lab.">
 <meta property="og:image" content="https://samirpahari91.github.io/personal_website/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Samir Pahari — geoscientist & GeoAI researcher">
-<meta name="twitter:description" content="Deep learning for flood susceptibility, Earth-observation datacubes, enterprise GIS. PhD student at The Ohio State University.">
+<meta name="twitter:description" content="Remote sensing, GIS and machine/deep learning for hazards and Earth observation. PhD student at The Ohio State University.">
 <meta name="twitter:image" content="https://samirpahari91.github.io/personal_website/assets/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d5fa8'/%3E%3Cg fill='none' stroke='%23fbfaf5' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M12 44c6-10 12-14 20-14s14 4 20 14'/%3E%3Cpath d='M18 50c4-6 8-9 14-9s10 3 14 9'/%3E%3Cpath d='M8 36c8-14 16-20 24-20s16 6 24 20'/%3E%3C/g%3E%3C/svg%3E">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Samir Pahari","jobTitle":"PhD student and Graduate Teaching Assistant","affiliation":{"@type":"CollegeOrUniversity","name":"The Ohio State University"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Western Kentucky University"},{"@type":"CollegeOrUniversity","name":"Tribhuvan University"}],"email":"mailto:pahari.2@osu.edu","address":{"@type":"PostalAddress","addressLocality":"Columbus","addressRegion":"OH","addressCountry":"US"},"sameAs":["https://www.linkedin.com/in/samir-pahari-56a0b9264","https://github.com/samirpahari91"],"url":"https://samirpahari91.github.io/personal_website/","knowsAbout":["GIS","Remote sensing","Deep learning","Flood susceptibility mapping","GNSS surveying","Earth observation"]}
+{"@context":"https://schema.org","@type":"Person","name":"Samir Pahari","jobTitle":"PhD student and Graduate Teaching Assistant","affiliation":{"@type":"CollegeOrUniversity","name":"The Ohio State University"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Western Kentucky University"},{"@type":"CollegeOrUniversity","name":"Tribhuvan University"}],"email":"mailto:pahari.2@osu.edu","address":{"@type":"PostalAddress","addressLocality":"Columbus","addressRegion":"OH","addressCountry":"US"},"sameAs":["https://www.linkedin.com/in/samir-pahari-56a0b9264","https://github.com/samirpahari91"],"url":"https://samirpahari91.github.io/personal_website/","knowsAbout":["Remote sensing","GIS","Machine learning","Deep learning","ArcGIS","ENVI","Google Earth Engine","Flood susceptibility mapping","GNSS surveying","Earth observation"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -326,6 +326,40 @@ body.recruiter .epoch-track{display:none}
 .mlegend span{display:inline-flex; align-items:center; gap:6px}
 .mlegend svg{width:12px; height:12px; overflow:visible}
 .hi{color:var(--fg); font-weight:500}
+
+
+/* incoming: what's next, inside the training window */
+.incoming{position:absolute; top:12px; right:14px; z-index:3; width:min(292px, calc(100% - 70px)); background:var(--panel); border:1px solid var(--line-2); border-radius:12px; box-shadow:var(--shadow); padding:12px 14px 10px; display:flex; flex-direction:column; gap:6px; animation:incIn .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes incIn{from{opacity:0; transform:translateY(-10px) scale(.97)}to{opacity:1; transform:none}}
+.inc-h{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--amber)}
+.inc-dot{width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 0 0 var(--amber-soft); animation:incPulse 1.8s ease-out infinite; flex:0 0 auto}
+@keyframes incPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--amber) 45%, transparent)}100%{box-shadow:0 0 0 9px transparent}}
+.inc-k{flex:1; min-width:0}
+.inc-x{border:0; background:transparent; color:var(--muted); font-size:1rem; line-height:1; padding:0 2px; border-radius:4px}
+.inc-x:hover{color:var(--fg)}
+.inc-body{display:flex; flex-direction:column; gap:2px}
+.inc-body b{font-family:var(--display); font-weight:600; font-size:1.05rem; line-height:1.2; color:var(--fg)}
+.inc-body span{font-size:.82rem; color:var(--fg-2)}
+.inc-body a{font-family:var(--mono); font-size:.72rem; margin-top:2px}
+.inc-body.swap{animation:incSwap .4s ease both}
+@keyframes incSwap{from{opacity:0; transform:translateX(8px)}to{opacity:1; transform:none}}
+.inc-f{display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:6px; border-top:1px dashed var(--line-2)}
+.inc-when{font-family:var(--mono); font-size:.8rem; font-weight:600; color:var(--amber); font-variant-numeric:tabular-nums; text-align:right}
+.inc-when.live{color:var(--good)}
+.inc-dots{display:flex; gap:5px}
+.inc-dots button{width:7px; height:7px; padding:0; border-radius:50%; border:0; background:var(--line-2)}
+.inc-dots button.on{background:var(--amber)}
+.inc-chip{position:absolute; top:12px; right:14px; z-index:3; display:inline-flex; align-items:center; gap:8px; padding:6px 11px; border-radius:99px; border:1px solid var(--line-2); background:var(--panel); font-family:var(--mono); font-size:.72rem; color:var(--fg); box-shadow:var(--shadow)}
+.inc-chip:hover{border-color:var(--amber)}
+.inc-chip i{width:7px; height:7px; border-radius:50%; background:var(--amber); animation:incPulse 1.8s ease-out infinite}
+.inc-chip b{color:var(--amber); font-weight:600}
+#cv .next{margin-top:14px; padding:10px 14px; border:1px dashed var(--amber); border-radius:10px; font-size:.9rem; color:var(--fg-2)}
+#cv .next b{color:var(--amber); font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; margin-right:8px}
+@media (max-width:560px){
+  .incoming{position:relative; top:auto; right:auto; width:auto; margin:8px 6px 4px}
+  .inc-chip{position:relative; top:auto; right:auto; margin:6px 6px 2px}
+}
+@media print{ #cv .next{display:none} }
 
 /* ---------- live tour ---------- */
 .tour{display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:14px; align-items:stretch; height:640px}
@@ -1209,7 +1243,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
       <div>
         <div class="eyebrow"><b>training run</b> · a model is being fit to one geoscientist</div>
         <h1 style="margin-top:12px">Samir <span class="thin">Pahari</span></h1>
-        <p class="hero-tag">I'm a geoscientist and <b>GeoAI researcher</b>. I build deep-learning models for flood susceptibility, Earth-observation datacubes that span dozens of satellite missions, and enterprise GIS that holds up in the field. PhD student at <b>The Ohio State University</b>, BuckAI Observatory lab.</p>
+        <p class="hero-tag">I'm a geoscientist specializing in leveraging <b>remote sensing, GIS and machine/deep learning</b> across many applications, from flood and landslide hazards to soil erosion, precision agriculture and Earth-observation datacubes. I work daily in the core geospatial stack: <b>ArcGIS</b>, <b>ENVI</b> and <b>Google Earth Engine</b>. PhD student at <b>The Ohio State University</b>, BuckAI Observatory lab.</p>
       </div>
       <div class="hero-meta">
         <div class="photo"><img id="photo" src="assets/samir.jpg" alt="Samir Pahari in front of a banded gneiss wall" onerror="this.hidden=true"></div>
@@ -1226,7 +1260,14 @@ svg.leaflet-image-layer.leaflet-interactive path {
           <span>loss · epochs 2018 → 2026</span>
           <div class="legend"><span class="train"><i></i>train</span><span class="val"><i></i>validation</span></div>
         </div>
-        <div class="chart-wrap"><canvas id="loss" aria-label="Training and validation loss falling across the years 2018 to 2026, with real milestones marked" role="img"></canvas><div class="tip" id="lossTip"></div></div>
+        <div class="chart-wrap"><canvas id="loss" aria-label="Training and validation loss falling across the years 2018 to 2026, with real milestones marked and upcoming events on the forecast" role="img"></canvas><div class="tip" id="lossTip"></div>
+          <div class="incoming" id="incoming" hidden role="status" aria-live="polite">
+            <div class="inc-h"><span class="inc-dot" aria-hidden="true"></span><span class="inc-k" id="incKind">incoming · next epoch</span><button class="inc-x" id="incMin" type="button" aria-label="Minimise">–</button></div>
+            <div class="inc-body" id="incBody"></div>
+            <div class="inc-f"><span class="inc-dots" id="incDots"></span><span class="inc-when" id="incWhen"></span></div>
+          </div>
+          <button class="inc-chip" id="incChip" type="button" hidden></button>
+        </div>
         <div class="mlegend" id="mlegend" aria-label="Milestone marker legend"></div>
         <div class="stats">
           <div><small>epoch</small><strong id="sEpoch">2018</strong></div>
@@ -1423,13 +1464,13 @@ const MAPGEO = {"w":1000,"h":440,"proj":{"scale":154.66919876010428,"translate":
    ========================================================================== */
 const DATA = {
   name: "Samir Pahari",
-  headline: "Geoscientist · GeoAI researcher · PhD student, The Ohio State University",
+  headline: "Geoscientist · remote sensing, GIS & ML/DL · PhD student, The Ohio State University",
   location: "Columbus, Ohio, USA",
   email: "pahari.2@osu.edu",
   linkedin: "https://www.linkedin.com/in/samir-pahari-56a0b9264",
   github: "https://github.com/samirpahari91",
   cvFile: "assets/Samir_Pahari_CV.pdf",
-  summary: "Geoscientist specializing in GIS, remote sensing and spatial analysis for environmental and hazard applications: deep-learning flood susceptibility mapping, RUSLE soil-loss assessment and multi-mission Earth-observation datacubes. Proficient across the Esri ecosystem (ArcGIS Pro, Enterprise, Online, Field Maps, Experience Builder) with Python (ArcPy), SQL, Arcade and survey-grade GNSS field work. M.S. Geoscience (GPA 4.0), Western Kentucky University; fully funded PhD in Earth Science at The Ohio State University from Fall 2026, BuckAI Observatory lab.",
+  summary: "Geoscientist specializing in leveraging remote sensing, GIS and machine/deep learning across a wide range of applications: flood and landslide susceptibility, soil-loss assessment, atmospheric analysis of extreme floods, precision agriculture and multi-mission Earth-observation datacubes. Proficient in the core geospatial stack, including the Esri ArcGIS suite (ArcGIS Pro, Enterprise, Online, Field Maps, Experience Builder), ENVI and Google Earth Engine, with Python (ArcPy), SQL, Arcade and survey-grade GNSS field work. M.S. Geoscience (GPA 4.0), Western Kentucky University; fully funded PhD in Earth Science at The Ohio State University from Fall 2026, BuckAI Observatory lab.",
 
   // Epochs = years. Each event becomes a log line in the hero and a feature chip.
   epochs: [
@@ -1471,6 +1512,14 @@ const DATA = {
       { k: "w",    m: "manuscript in review · Natural Hazards" },
       { k: "load", m: "PhD Earth Science · The Ohio State University · BuckAI Observatory (Dr. Joachim Moortgat)", feat: "GeoAI" },
       { k: "ok",   m: "geoai-datacubes presented at Google | Ohio State partnership announcement", feat: "EO datacubes" } ] }
+  ],
+
+  // Coming up. Shown as a pop-up in the training window, a hollow marker on the forecast part of the loss curve,
+  // queued lines in the training log, and an answer in the Q&A. Items with dates expire on their own after `end`.
+  // To retire an item, delete it here (and ask for it to be moved into the CV sections).
+  upcoming: [
+    { id: "agu26", label: "AGU26", kind: "conference", title: "AGU Annual Meeting 2026", where: "Moscone Center, San Francisco", start: "2026-12-07", end: "2026-12-11", role: "attending", url: "https://www.agu.org/annual-meeting" },
+    { id: "nh", label: "Natural Hazards", kind: "paper", title: "Geology-aware deep learning for flood susceptibility", where: "Natural Hazards", role: "manuscript under review", badge: "in review" }
   ],
 
   // The journey: three stops, two flights. `at` names a coordinate in tools/genmap.mjs; items are revealed one by one while the camera holds.
@@ -1607,7 +1656,7 @@ const DATA = {
   ],
 
   skillGroups: {
-    "GIS platforms": ["ArcGIS Pro", "ArcGIS Enterprise", "ArcGIS Field Maps", "ArcGIS Experience Builder", "QGIS", "Google Earth Engine"],
+    "GIS platforms": ["ArcGIS Pro", "ArcGIS Enterprise", "ArcGIS Online", "ArcGIS Field Maps", "ArcGIS Experience Builder", "ENVI", "Google Earth Engine", "QGIS"],
     "Programming & data": ["Python", "SQL", "Arcade", "R", "Deep learning (CNN)", "Machine learning"],
     "Remote sensing": ["Remote sensing", "LiDAR / DEM", "Sentinel-2", "Earth observation", "Photogrammetry", "ERA5"],
     "Field & lab": ["RTK GNSS", "GNSS", "UAV / drone", "Total station", "Field data collection", "3-D scanning"]
@@ -1651,8 +1700,8 @@ const DATA = {
   qa: [
     { k: ["research", "work on", "study", "thesis", "flood", "deep learning", "cnn", "what does"], src: "§ Research",
       a: "His core research is deep learning for flood susceptibility mapping: a geology-aware, patch-based CNN trained on the North Fork Kentucky River basin using LiDAR DEM derivatives, Sentinel-2 land cover and NDVI, soils and PRISM rainfall. Earlier work applied RUSLE to soil loss in the same basin (published 2025). At Ohio State he is building geoai-datacubes, a multi-mission Earth-observation pipeline." },
-    { k: ["tool", "software", "stack", "arcgis", "python", "skills", "program", "language", "esri"], src: "§ Feature importance",
-      a: "ArcGIS Pro, Enterprise, Online, Field Maps and Experience Builder; Python (ArcPy), SQL, Arcade and R; QGIS and Google Earth Engine; Trimble R2 RTK GNSS, UAV/drone systems and 3-D scanning. On the modeling side: CNNs, supervised ML, remote sensing and LiDAR/DEM analysis." },
+    { k: ["tool", "software", "stack", "arcgis", "python", "skills", "program", "language", "esri", "envi", "earth engine", "gee"], src: "§ Feature importance",
+      a: "The core geospatial stack: ArcGIS Pro, Enterprise, Online, Field Maps and Experience Builder, ENVI for image analysis, and Google Earth Engine for cloud-scale remote sensing; Python (ArcPy), SQL, Arcade and R; QGIS; Trimble R2 RTK GNSS, UAV/drone systems and 3-D scanning. On the modeling side: CNNs, supervised ML, remote sensing and LiDAR/DEM analysis." },
     { k: ["where", "now", "currently", "location", "based", "live", "ohio", "osu"], src: "§ Dataset",
       a: "Columbus, Ohio. He started a fully funded PhD in Earth Science at The Ohio State University in Fall 2026, in the BuckAI Observatory lab with Dr. Joachim Moortgat, and is a Graduate Teaching Assistant there." },
     { k: ["education", "degree", "gpa", "master", "bachelor", "phd", "school", "university"], src: "§ Dataset",
@@ -1669,6 +1718,7 @@ const DATA = {
       a: "Poster at AGU25 in New Orleans (H21Y), a talk at the Kentucky GIS Conference 2025 in Florence, KY, presentations at the WKU Student Scholar Showcase and Data Science Day, and session moderator at KAMP and the Kentucky Stormwater Association conference." },
     { k: ["open source", "github", "code", "datacube", "repo", "software project"], src: "§ Open source",
       a: "geoai-datacubes (BuckAI Observatory, MIT license) retrieves imagery from 39 satellite missions through a single interface and harmonizes it into aligned datacubes. github.com/buckai-observatory/geoai-datacubes" },
+    { k: ["next", "upcoming", "coming up", "future", "agu26", "agu 2026", "san francisco", "plans", "soon"], src: "§ Incoming", a: null },
     { k: ["collab", "hire", "available", "open to", "opportunit", "contact", "email", "reach"], src: "§ Checkpoint",
       a: "Yes. He is open to research collaborations in GeoAI and natural hazards and to geospatial roles. Email pahari.2@osu.edu, or connect on LinkedIn." },
     { k: ["gnss", "gps", "field", "survey", "rtk", "drone", "uav", "lidar"], src: "§ Training log",
@@ -1678,7 +1728,7 @@ const DATA = {
     { k: ["certif", "training", "course", "deeplearning", "stanford"], src: "§ Validation set",
       a: "DeepLearning.AI/Stanford Supervised Machine Learning and Advanced Learning Algorithms (2024); GNSS workshop with the University of Tokyo's CSIS and ICG (2022); DGPS and terrestrial LiDAR scanner training (2022); cloud-based satellite analysis for flood monitoring; Residential Climate Training (2021)." }
   ],
-  suggestions: ["What does he research?", "Which tools does he use?", "Where is he now?", "Has he published?", "Is he open to collaboration?", "Tell me about the field work"]
+  suggestions: ["What\u2019s coming up next?", "What does he research?", "Which tools does he use?", "Where is he now?", "Has he published?", "Is he open to collaboration?", "Tell me about the field work"]
 };
 
 /* ============================================================================ */
@@ -1714,7 +1764,7 @@ const SVG = "http://www.w3.org/2000/svg";
 /* the loss curve: a stylised function of progress, with real milestones on it   */
 /* ============================================================================ */
 const YEARS = DATA.epochs.map(e => e.year);
-const Y0 = YEARS[0], Y1 = YEARS[YEARS.length - 1] + 1;        // axis runs to the end of the last epoch
+const Y0 = YEARS[0], Y1 = YEARS[YEARS.length - 1] + 1 + ((DATA.upcoming || []).some(u => u.start) ? 0.5 : 0);   // axis runs past the last epoch into the forecast when something is coming up
 const noise = (x, s) => { const v = Math.sin(x * 127.1 + s * 311.7) * 43758.5453; return (v - Math.floor(v)) - 0.5; };
 const lossAt = p => {
   const base = 0.11 + 2.2 * Math.exp(-4.3 * p);
@@ -1724,6 +1774,31 @@ const lossAt = p => {
 };
 const yearAt = p => Y0 + p * (Y1 - Y0);
 const pAt = y => (y - Y0) / (Y1 - Y0);
+
+/* ---------- upcoming: dates, status, expiry ---------- */
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const parseDay = s => { if (!s) return null; const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const decYear = dt => dt.getFullYear() + (dt - new Date(dt.getFullYear(), 0, 1)) / (new Date(dt.getFullYear() + 1, 0, 1) - new Date(dt.getFullYear(), 0, 1));
+const TODAY = (() => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); })();
+const fmtRange = (a, b) => {
+  if (!a) return "";
+  if (!b || +a === +b) return `${a.getDate()} ${MONTHS[a.getMonth()]} ${a.getFullYear()}`;
+  if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) return `${a.getDate()}–${b.getDate()} ${MONTHS[a.getMonth()]} ${a.getFullYear()}`;
+  return `${a.getDate()} ${MONTHS[a.getMonth()]} – ${b.getDate()} ${MONTHS[b.getMonth()]} ${b.getFullYear()}`;
+};
+const UPCOMING = (DATA.upcoming || []).map(u => {
+  const start = parseDay(u.start), end = parseDay(u.end) || start;
+  let status = "pending", when = u.badge || u.role || "", days = null;
+  if (start) {
+    days = Math.round((start - TODAY) / 864e5);
+    if (TODAY > end) status = "past";
+    else if (days <= 0) { status = "live"; when = "happening now"; }
+    else { status = "soon"; when = days === 1 ? "tomorrow" : days <= 60 ? `in ${days} days` : `in ${Math.round(days / 7)} weeks`; }
+  }
+  return { ...u, startD: start, endD: end, status, when, days, range: fmtRange(start, end), y: start ? decYear(start) : null };
+}).filter(u => u.status !== "past");
+const P_TODAY = Math.min(1, Math.max(0, pAt(decYear(TODAY))));
+
 
 const MTYPES = {
   degree: { name: "degree", color: "--accent" },
@@ -1758,7 +1833,7 @@ function sizeCanvas(cv) {
 function drawLoss(hover = null) {
   const { w, h, dpr } = sizeCanvas(lossCv);
   const c = lossCtx; c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, w, h);
-  const pad = { l: 40, r: 16, t: 16, b: 26 };
+  const pad = { l: 40, r: UPCOMING.some(u => u.y != null) ? 46 : 16, t: 16, b: 26 };
   const X = p => pad.l + p * (w - pad.l - pad.r);
   const Y = v => pad.t + (1 - v / 2.6) * (h - pad.t - pad.b);
   const grid = cssVar("--grid"), muted = cssVar("--muted"), accent = cssVar("--accent"), val = cssVar("--val"), line2 = cssVar("--line-2"), panel = cssVar("--panel");
@@ -1766,16 +1841,24 @@ function drawLoss(hover = null) {
   c.strokeStyle = grid; c.lineWidth = 1; c.fillStyle = muted; c.textAlign = "right";
   for (const v of [0, 0.5, 1, 1.5, 2, 2.5]) { const y = Y(v); c.beginPath(); c.moveTo(pad.l, y); c.lineTo(w - pad.r, y); c.stroke(); c.fillText(v.toFixed(1), pad.l - 8, y); }
   c.textAlign = "center"; c.textBaseline = "top";
-  for (let yr = Y0; yr <= Y1; yr++) { const x = X(pAt(yr)); c.strokeStyle = line2; c.beginPath(); c.moveTo(x, h - pad.b); c.lineTo(x, h - pad.b + 4); c.stroke(); if (w > 420 || (yr - Y0) % 2 === 0) c.fillText(String(yr), x, h - pad.b + 7); }
+  for (let yr = Y0; yr <= Math.floor(Y1); yr++) { const x = X(pAt(yr)); c.strokeStyle = line2; c.beginPath(); c.moveTo(x, h - pad.b); c.lineTo(x, h - pad.b + 4); c.stroke(); if (w > 420 || (yr - Y0) % 2 === 0) c.fillText(String(yr), x, h - pad.b + 7); }
   const N = 240, n = Math.max(2, Math.floor(P * N)), pe = Math.min(P, n / N);
-  const path = key => { c.beginPath(); for (let i = 0; i <= n; i++) { const p = i / N; if (p > P) break; const v = lossAt(p)[key]; i ? c.lineTo(X(p), Y(v)) : c.moveTo(X(p), Y(v)); } };
+  const pSolid = Math.min(pe, P_TODAY);
+  const path = (key, from, to) => { c.beginPath(); let first = true; for (let i = 0; i <= N; i++) { const p = i / N; if (p < from) continue; if (p > to) break; const v = lossAt(p)[key]; first ? c.moveTo(X(p), Y(v)) : c.lineTo(X(p), Y(v)); first = false; } };
   markerHits = [];
   if (P > 0.004) {
-    c.save(); path("train"); c.lineTo(X(pe), Y(0)); c.lineTo(X(0), Y(0)); c.closePath();
+    c.save(); path("train", 0, pSolid); c.lineTo(X(pSolid), Y(0)); c.lineTo(X(0), Y(0)); c.closePath();
     const g = c.createLinearGradient(0, pad.t, 0, h - pad.b); g.addColorStop(0, accent + "33"); g.addColorStop(1, accent + "00"); c.fillStyle = g; c.fill(); c.restore();
-    c.lineWidth = 2; c.lineJoin = "round"; c.strokeStyle = val; path("val"); c.stroke();
-    c.strokeStyle = accent; path("train"); c.stroke();
-    const e = lossAt(pe), xe = X(pe);
+    c.lineWidth = 2; c.lineJoin = "round"; c.strokeStyle = val; path("val", 0, pSolid); c.stroke();
+    c.strokeStyle = accent; path("train", 0, pSolid); c.stroke();
+    if (pe > P_TODAY) {   // forecast: the part of the run that hasn't happened yet
+      c.save(); c.setLineDash([3, 4]); c.globalAlpha = .6; c.lineWidth = 1.6;
+      c.strokeStyle = val; path("val", P_TODAY, pe); c.stroke(); c.strokeStyle = accent; path("train", P_TODAY, pe); c.stroke(); c.restore();
+      const xt = X(P_TODAY);
+      c.save(); c.strokeStyle = line2; c.setLineDash([2, 3]); c.lineWidth = 1; c.beginPath(); c.moveTo(xt, pad.t + 12); c.lineTo(xt, h - pad.b); c.stroke(); c.restore();
+      c.fillStyle = muted; c.textAlign = "center"; c.textBaseline = "alphabetic"; c.fillText("today", xt, pad.t + 8);
+    }
+    const e = lossAt(pSolid), xe = X(pSolid);
     for (const [v, col] of [[e.val, val], [e.train, accent]]) { c.beginPath(); c.arc(xe, Y(v), 4, 0, Math.PI * 2); c.fillStyle = col; c.fill(); c.lineWidth = 2; c.strokeStyle = panel; c.stroke(); }
     // milestones that have been reached, stacked above the training curve
     for (const m of MS) {
@@ -1785,6 +1868,18 @@ function drawLoss(hover = null) {
       markerPath(c, m.type, x, y, 5.5); c.fillStyle = cssVar(MTYPES[m.type].color); c.fill(); c.lineWidth = 1.5; c.strokeStyle = panel; c.stroke();
       markerHits.push({ x, y, m });
     }
+    // upcoming: hollow rings on the forecast, raised above the stacked milestones
+    const amber = cssVar("--amber");
+    for (const u of UPCOMING) {
+      if (u.y == null) continue; const pu = pAt(u.y); if (pu > pe || pu < 0 || pu > 1) continue;
+      const x = X(pu), base = Y(lossAt(pu).train), y = base - 52;
+      c.save(); c.strokeStyle = amber; c.globalAlpha = .7; c.setLineDash([2, 3]); c.lineWidth = 1; c.beginPath(); c.moveTo(x, y + 8); c.lineTo(x, base - 4); c.stroke(); c.restore();
+      c.beginPath(); c.arc(x, y, 7, 0, Math.PI * 2); c.fillStyle = panel; c.fill(); c.lineWidth = 2.2; c.strokeStyle = amber; c.stroke();
+      c.beginPath(); c.arc(x, y, 2.4, 0, Math.PI * 2); c.fillStyle = amber; c.fill();
+      c.font = `600 10px ${cssVar("--mono") || "monospace"}`; c.fillStyle = amber; c.textAlign = "left"; c.textBaseline = "middle"; c.fillText(u.label, x + 11, y);
+      c.font = `11px ${cssVar("--mono") || "monospace"}`;
+      markerHits.push({ x, y, m: { y: u.y, type: "upcoming", label: `${u.title} · ${u.where} · ${u.range}${u.role ? " · " + u.role : ""}`, u } });
+    }
   }
   if (hover) {
     // nearest marker within 14px wins; otherwise a crosshair reading
@@ -1792,9 +1887,9 @@ function drawLoss(hover = null) {
     for (const hit of markerHits) { const d = Math.hypot(hit.x - hover.x, hit.y - hover.y); if (d < bd) { bd = d; best = hit; } }
     const px = Math.min(P, Math.max(0, (hover.x - pad.l) / (w - pad.l - pad.r)));
     if (best) {
-      markerPath(c, best.m.type, best.x, best.y, 8); c.fillStyle = cssVar(MTYPES[best.m.type].color); c.fill(); c.lineWidth = 2; c.strokeStyle = panel; c.stroke();
+      if (best.m.type !== "upcoming") { markerPath(c, best.m.type, best.x, best.y, 8); c.fillStyle = cssVar(MTYPES[best.m.type].color); c.fill(); c.lineWidth = 2; c.strokeStyle = panel; c.stroke(); }
       lossTip.style.display = "block"; lossTip.style.left = best.x + "px"; lossTip.style.top = (best.y - 6) + "px";
-      lossTip.innerHTML = `<b>${esc(String(Math.floor(best.m.y)))}</b> · ${esc(MTYPES[best.m.type].name)}<br>${esc(best.m.label)}`;
+      lossTip.innerHTML = best.m.type === "upcoming" ? `<b>${esc(best.m.u.when)}</b> · upcoming<br>${esc(best.m.label)}` : `<b>${esc(String(Math.floor(best.m.y)))}</b> · ${esc(MTYPES[best.m.type].name)}<br>${esc(best.m.label)}`;
     } else if (px <= P) {
       const x = X(px), l = lossAt(px);
       c.strokeStyle = line2; c.setLineDash([3, 3]); c.beginPath(); c.moveTo(x, pad.t); c.lineTo(x, h - pad.b); c.stroke(); c.setLineDash([]);
@@ -1806,13 +1901,14 @@ function drawLoss(hover = null) {
 }
 lossCv.addEventListener("mousemove", e => { const r = lossCv.getBoundingClientRect(); drawLoss({ x: e.clientX - r.left, y: e.clientY - r.top }); });
 lossCv.addEventListener("mouseleave", () => drawLoss());
+lossCv.addEventListener("click", e => { const r = lossCv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; const hit = markerHits.find(h => h.m.type === "upcoming" && Math.hypot(h.x - x, h.y - y) < 14); if (hit) INCOMING.open(UPCOMING.indexOf(hit.m.u)); });
 addEventListener("resize", () => drawLoss());
 // marker legend
 $("#mlegend").innerHTML = Object.entries(MTYPES).map(([t, v]) => {
   const cv = document.createElement("canvas"); cv.width = cv.height = 24; const c = cv.getContext("2d");
   markerPath(c, t, 12, 12, 8); c.fillStyle = cssVar(v.color); c.fill();
   return `<span><img src="${cv.toDataURL()}" width="12" height="12" alt="">${esc(v.name)}</span>`;
-}).join("");
+}).join("") + (UPCOMING.some(u => u.y != null) ? `<span><svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.4" fill="none" stroke="var(--amber)" stroke-width="1.8"/><circle cx="6" cy="6" r="1.5" fill="var(--amber)"/></svg>upcoming</span>` : "");
 
 /* ============================================================================ */
 /* the training run: log lines + learned features driven by P                    */
@@ -1831,11 +1927,11 @@ function pushLog(ev) {
   if (ev.feat) { feats++; const c = document.createElement("span"); c.className = "chip"; c.innerHTML = `<b>+</b> ${esc(ev.feat)}`; learned.appendChild(c); }
 }
 function setStats() {
-  const l = lossAt(P);
-  $("#sEpoch").textContent = Math.min(Y1 - 1, Math.floor(yearAt(P))); $("#sTrain").textContent = l.train.toFixed(3); $("#sVal").textContent = l.val.toFixed(3); $("#sFeat").textContent = feats;
+  const l = lossAt(Math.min(P, P_TODAY));
+  $("#sEpoch").textContent = Math.min(YEARS[YEARS.length - 1], Math.floor(yearAt(P))); $("#sTrain").textContent = l.train.toFixed(3); $("#sVal").textContent = l.val.toFixed(3); $("#sFeat").textContent = feats;
 }
 function resetRun() {
-  cancelAnimationFrame(raf); P = 0; emitted = 0; feats = 0; playing = false; finished = false;
+  cancelAnimationFrame(raf); P = 0; emitted = 0; feats = 0; playing = false; finished = false; if (typeof INCOMING !== "undefined") INCOMING.hide();
   log.innerHTML = ""; learned.innerHTML = "";
   $("#logState").textContent = "initializing…"; $("#runDot").classList.add("live");
   const d = document.createElement("div"); d.innerHTML = `<span class="t">----</span><span class="k">init</span><span class="m">loading record · ${DATA.epochs.length} epochs · ${DATA.milestones.length} milestones · seed=1997</span>`; log.appendChild(d);
@@ -1850,7 +1946,9 @@ function stepTo(p) {
 function finishRun() {
   if (finished) return; finished = true;
   playing = false; $("#logState").textContent = "model ready ✓"; $("#runDot").classList.remove("live");
-  const d = document.createElement("div"); d.innerHTML = `<span class="t">done</span><span class="k ok">save</span><span class="m">checkpoint written · val loss ${lossAt(1).val.toFixed(3)} · open to collaboration<span class="cur"></span></span>`; log.appendChild(d); log.scrollTop = log.scrollHeight;
+  for (const u of UPCOMING) { const q = document.createElement("div"); q.innerHTML = `<span class="t">next</span><span class="k w">queue</span><span class="m">${esc(u.label)} · ${esc(u.title)}${u.range ? " · " + esc(u.range) : ""} · ${esc(u.status === "live" ? "happening now" : u.start ? (u.role ? u.role + " · " : "") + u.when : u.role)}</span>`; log.appendChild(q); }
+  const d = document.createElement("div"); d.innerHTML = `<span class="t">done</span><span class="k ok">save</span><span class="m">checkpoint written · val loss ${lossAt(P_TODAY).val.toFixed(3)} · open to collaboration<span class="cur"></span></span>`; log.appendChild(d); log.scrollTop = log.scrollHeight;
+  setTimeout(() => INCOMING.open(0, true), reduceMotion ? 0 : 500);
 }
 function play() {
   resetRun(); playing = true; $("#logState").textContent = "training…";
@@ -1873,7 +1971,7 @@ $("#skipBtn").addEventListener("click", skip);
     const max = document.documentElement.scrollHeight - innerHeight;
     const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 1;
     bar.style.width = (p * 100).toFixed(1) + "%";
-    $("#epochNow").textContent = Math.min(Y1 - 1, Math.floor(yearAt(p))); $("#lossNow").textContent = lossAt(p).val.toFixed(2);
+    $("#epochNow").textContent = Math.min(YEARS[YEARS.length - 1], Math.floor(yearAt(p))); $("#lossNow").textContent = lossAt(p).val.toFixed(2);
   };
   addEventListener("scroll", update, { passive: true }); addEventListener("resize", update); update();
   const links = $$("#nav a"); const byId = Object.fromEntries(links.map(a => [a.getAttribute("href").slice(1), a]));
@@ -2043,6 +2141,10 @@ const FIGS = {
     for (const e of DATA.qa) { const sc = e.k.reduce((n, k) => n + (s.includes(k) ? (k.length > 5 ? 2 : 1) : 0), 0); if (sc > bs) { bs = sc; best = e; } }
     if (!best) return { a: `That is not something my CV covers. Try research, tools, education, experience, teaching, publications, awards, field work, or how to get in touch.`, src: "no match" };
     const conf = Math.min(0.98, 0.55 + 0.12 * bs).toFixed(2);
+    if (best.a == null) {
+      if (!UPCOMING.length) return { a: "Nothing announced right now. The latest work is in the research and talks sections.", src: best.src };
+      return { a: UPCOMING.map(u => `${u.title}, ${u.where}${u.range ? " (" + u.range + ")" : ""}${u.role ? ": " + u.role : ""}${u.start && u.status !== "live" ? ", " + u.when : u.status === "live" ? ", happening now" : ""}.`).join(" "), src: `${best.src} · confidence ${conf}` };
+    }
     return { a: best.a, src: `${best.src} · confidence ${conf}` };
   };
   const ask = q => { if (!q.trim()) return; say("u", esc(q)); setTimeout(() => { const r = answer(q); say("m", `${esc(r.a)}<span class="src">${esc(r.src)}</span>`); }, reduceMotion ? 0 : 420); };
@@ -2061,6 +2163,7 @@ const FIGS = {
   $("#cvSheet").innerHTML = `
     <header><div><h1>${esc(DATA.name)}</h1><div class="sub">${esc(DATA.headline)}</div></div>
       <div class="ct">${esc(DATA.email)}<br>${esc(DATA.linkedin.replace("https://www.", ""))}<br>${esc(DATA.location)}</div></header>
+    ${UPCOMING.length ? `<div class="next"><b>Next</b>${UPCOMING.map(u => `${esc(u.title)}, ${esc(u.where)}${u.range ? " · " + esc(u.range) : ""}${u.role ? " · " + esc(u.role) : ""}`).join(" &nbsp;/&nbsp; ")}</div>` : ""}
     <h2>Summary</h2><p class="inline">${esc(DATA.summary)}</p>
     <h2>Education</h2>${DATA.education.map(e => row(e.years, e.degree, e.inst + " · " + Object.entries(e.kv).map(([k, v]) => `${k}: ${v}`).join(" · "))).join("")}
     <h2>Research</h2>${DATA.research.map(r => row("", r.title, r.body)).join("")}
@@ -2073,11 +2176,42 @@ const FIGS = {
     <h2>Outreach</h2>${DATA.outreach.map(o => row("", o.t, o.s)).join("")}
     <h2>Affiliations</h2><p class="inline">${DATA.affiliations.map(esc).join(" · ")}</p>
     <div class="cvtop"><a class="btn primary" href="${esc(DATA.cvFile)}" target="_blank" rel="noopener">Download CV (PDF)</a><button class="btn" type="button" data-mode>← Back to the training run</button></div>`;
-  const set = on => { document.body.classList.toggle("recruiter", on); btn.setAttribute("aria-pressed", String(on)); btn.innerHTML = on ? `Story mode <span class="kbd">R</span>` : `Recruiter mode <span class="kbd">R</span>`; if (on) scrollTo({ top: 0, behavior: "instant" }); else drawLoss(); };
+  const set = on => { document.body.classList.toggle("recruiter", on); btn.setAttribute("aria-pressed", String(on)); btn.innerHTML = on ? `Story mode <span class="kbd">R</span>` : `Recruiter mode <span class="kbd">R</span>`; if (on) { scrollTo({ top: 0, behavior: "instant" }); INCOMING.hide(); } else { drawLoss(); if (finished) INCOMING.open(0, true); } };
   btn.addEventListener("click", () => set(!document.body.classList.contains("recruiter")));
   $$("[data-mode]").forEach(b => b.addEventListener("click", () => set(!document.body.classList.contains("recruiter"))));
   addEventListener("keydown", e => { if ((e.key === "r" || e.key === "R") && !/input|textarea/i.test(document.activeElement?.tagName || "") && !e.metaKey && !e.ctrlKey) set(!document.body.classList.contains("recruiter")); });
   if (location.hash === "#cv") set(true);
+})();
+
+
+/* ============================================================================ */
+/* incoming: what's next, as a pop-up in the training window                     */
+/* ============================================================================ */
+const INCOMING = (() => {
+  const box = $("#incoming"), body = $("#incBody"), dots = $("#incDots"), when = $("#incWhen"), chip = $("#incChip"), kind = $("#incKind");
+  let i = 0, timer = null, hover = false, dismissed = false;
+  const KIND = { conference: "incoming · conference", paper: "incoming · publication", talk: "incoming · talk", release: "incoming · release" };
+  const render = (k, animate) => {
+    const u = UPCOMING[k]; if (!u) return; i = k;
+    kind.textContent = u.status === "live" ? "live now" : (KIND[u.kind] || "incoming · next epoch");
+    body.innerHTML = `<b>${esc(u.title)}</b><span>${esc(u.where)}${u.range ? " · " + esc(u.range) : ""}</span>${u.role ? `<span>${esc(u.role[0].toUpperCase() + u.role.slice(1))}</span>` : ""}${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} →</a>` : ""}`;
+    if (animate) { body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap"); }
+    when.textContent = u.when; when.classList.toggle("live", u.status === "live");
+    dots.innerHTML = UPCOMING.length > 1 ? UPCOMING.map((_, j) => `<button type="button" class="${j === k ? "on" : ""}" aria-label="Item ${j + 1}"></button>`).join("") : "";
+    dots.querySelectorAll("button").forEach((b, j) => b.addEventListener("click", () => { render(j, true); restart(); }));
+    const first = UPCOMING[0];
+    chip.innerHTML = `<i></i>next: ${esc(first.label)} · <b>${esc(first.start ? (first.status === "live" ? "now" : first.when.replace("in ", "")) : "soon")}</b>`;
+  };
+  const restart = () => { clearInterval(timer); if (UPCOMING.length > 1 && !reduceMotion) timer = setInterval(() => { if (!hover && !box.hidden) render((i + 1) % UPCOMING.length, true); }, 6500); };
+  box.addEventListener("mouseenter", () => hover = true); box.addEventListener("mouseleave", () => hover = false);
+  $("#incMin").addEventListener("click", () => { dismissed = true; box.hidden = true; chip.hidden = false; clearInterval(timer); });
+  chip.addEventListener("click", () => { dismissed = false; open(0); });
+  function open(k = 0, auto = false) {
+    if (!UPCOMING.length || document.body.classList.contains("recruiter")) return;
+    if (auto && dismissed) { render(0); chip.hidden = false; return; }
+    render(Math.max(0, k)); chip.hidden = true; box.hidden = false; box.style.animation = "none"; void box.offsetWidth; box.style.animation = ""; restart();
+  }
+  return { open, hide() { box.hidden = true; chip.hidden = true; clearInterval(timer); } };
 })();
 
 /* ============================================================================ */
