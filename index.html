@@ -1509,7 +1509,7 @@ const DATA = {
     { year: 2026, events: [
       { k: "ok",   m: "Outstanding Geoscience Graduate Student · WKU EEAS" , feat: "outstanding student award" },
       { k: "ok",   m: "M.S. complete · GPA 4.0 · thesis: geology-aware patch CNN for flood susceptibility" },
-      { k: "w",    m: "manuscript in review · Natural Hazards" },
+      { k: "ok",   m: "ACCEPTED · geology-aware deep learning for flood susceptibility · Discover Hazards", feat: "Discover Hazards paper" },
       { k: "load", m: "PhD Earth Science · The Ohio State University · BuckAI Observatory (Dr. Joachim Moortgat)", feat: "GeoAI" },
       { k: "ok",   m: "geoai-datacubes presented at Google | Ohio State partnership announcement", feat: "EO datacubes" } ] }
   ],
@@ -1519,7 +1519,7 @@ const DATA = {
   // To retire an item, delete it here (and ask for it to be moved into the CV sections).
   upcoming: [
     { id: "agu26", label: "AGU26", kind: "conference", title: "AGU Annual Meeting 2026", where: "Moscone Center, San Francisco", start: "2026-12-07", end: "2026-12-11", role: "attending", url: "https://www.agu.org/annual-meeting" },
-    { id: "nh", label: "Natural Hazards", kind: "paper", title: "Geology-aware deep learning for flood susceptibility", where: "Natural Hazards", role: "manuscript under review", badge: "in review" }
+    { id: "dh", label: "Discover Hazards", kind: "paper", title: "Geology-aware, patch-based deep learning for flood susceptibility mapping", where: "Discover Hazards (Springer Nature)", role: "accepted, in production · doi:10.1007/s44475-026-00077-6", badge: "in press", url: "https://link.springer.com/journal/44475" }
   ],
 
   // The journey: three stops, two flights. `at` names a coordinate in tools/genmap.mjs; items are revealed one by one while the camera holds.
@@ -1533,7 +1533,7 @@ const DATA = {
     { id: "wku", at: "bg", label: "Bowling Green", title: "Western Kentucky University", sub: "Bowling Green, Kentucky", years: "2024 – 2026", zoom: 10.6, vw: 38,
       items: [
         { k: "degree",   t: "M.S. Geoscience, GPA 4.0 · Graduate Teaching and Research Assistant", s: "2024 – 2026 · GEOL 113/114 labs, Landscape Geodynamics Lab with Dr. Nahid Gani" },
-        { k: "research", t: "North Fork Kentucky River basin: RUSLE soil loss and deep-learning flood susceptibility", s: "thesis study area · paper published 2025, manuscript in review at Natural Hazards" },
+        { k: "research", t: "North Fork Kentucky River basin: RUSLE soil loss and deep-learning flood susceptibility", s: "thesis study area · RUSLE paper published 2025, deep-learning paper accepted in Discover Hazards 2026" },
         { k: "work",     t: "Warren County Stormwater, GIS Technician", s: "summers 2025 and 2026 · RTK GNSS with KY CORS, SQL geodatabase, Field Maps and Arcade, Experience Builder" },
         { k: "research", t: "ERA5 reanalysis of the Nashville 2010 and eastern Kentucky 2022 floods", s: "2024 · CAPE, CIN, IVT, advection" },
         { k: "talk",     t: "Kentucky GIS Conference talk, Florence, Kentucky", s: "September 2025" },
@@ -1562,7 +1562,8 @@ const DATA = {
     { y: 2025.50, type: "paper",  label: "RUSLE soil-loss paper published, J. Kentucky Academy of Science" },
     { y: 2025.73, type: "talk",   label: "Kentucky GIS Conference talk, Florence KY" },
     { y: 2025.96, type: "talk",   label: "AGU25 poster, New Orleans" },
-    { y: 2026.20, type: "paper",  label: "Flood susceptibility manuscript submitted to Natural Hazards" },
+    { y: 2026.20, type: "paper",  label: "Flood susceptibility manuscript submitted" },
+    { y: 2026.86, type: "paper",  label: "Flood susceptibility paper accepted, Discover Hazards" },
     { y: 2026.33, type: "award",  label: "Outstanding Geoscience Graduate Student, WKU EEAS" },
     { y: 2026.37, type: "job",    label: "GIS Technician, Warren County Stormwater" },
     { y: 2026.42, type: "degree", label: "M.S. complete, GPA 4.0" },
@@ -1593,7 +1594,7 @@ const DATA = {
 
   research: [
     { short: "Flood DL", title: "Geology-aware deep learning for flood susceptibility",
-      body: "Patch-based convolutional networks trained on the North Fork Kentucky River basin, a confined Appalachian watershed hit by the catastrophic July 2022 floods. Inputs: LiDAR-derived DEM and geomorphic indices, Sentinel-2 land cover and NDVI, soil properties and PRISM rainfall; the geology-aware design conditions the model on bedrock and landform context rather than treating terrain as texture. Presented at AGU25 and the Kentucky GIS Conference; manuscript in review at Natural Hazards.",
+      body: "Patch-based convolutional networks trained on the North Fork Kentucky River basin, a confined Appalachian watershed hit by the catastrophic July 2022 floods. Inputs: LiDAR-derived DEM and geomorphic indices, Sentinel-2 land cover and NDVI, soil properties and PRISM rainfall; the geology-aware design conditions the model on bedrock and landform context rather than treating terrain as texture. Presented at AGU25 and the Kentucky GIS Conference; accepted for publication in Discover Hazards (2026).",
       tools: ["Deep learning (CNN)", "Python", "ArcGIS Pro", "LiDAR / DEM", "Sentinel-2", "PRISM", "Remote sensing", "Machine learning"], fig: "cnn" },
     { short: "Datacubes", title: "Multi-mission Earth-observation datacubes (geoai-datacubes)",
       body: "At the BuckAI Observatory, building the pipeline that retrieves and harmonizes imagery from 39 satellite missions, each with its own bands, resolution, grid and provider, into aligned datacubes ready for visualization and baseline ML. The goal is to collapse the weeks researchers spend on data preparation into a sentence.",
@@ -1607,10 +1608,10 @@ const DATA = {
   ],
 
   publications: [
+    { status: "in press", title: "Geology-aware, patch-based deep learning for flood susceptibility mapping in a confined Appalachian watershed, eastern Kentucky, USA",
+      venue: "Pahari, S., Gani, N.D., Singh, M. & Aham, V. (2026). Discover Hazards (in press). doi:10.1007/s44475-026-00077-6" },
     { status: "published", title: "Soil Loss Analysis of North Fork Kentucky River Basin Utilizing the Revised Universal Soil Loss Equation (RUSLE)",
       venue: "Pahari, S. & Gani, N.D. (2025). Journal of the Kentucky Academy of Science, 86(1), 1–15.", url: "https://doi.org/10.3101/KYAC-86-01-01" },
-    { status: "in review", title: "Geology-aware, patch-based deep learning for flood susceptibility mapping in a confined Appalachian watershed, eastern Kentucky, USA",
-      venue: "Pahari, S., Gani, N.D., Singh, M. & Aham, V. Natural Hazards (in review)." },
     { status: "abstract", title: "Advancing Flood Susceptibility Prediction with Deep Learning in North Fork Kentucky River Basin, Eastern Kentucky",
       venue: "Pahari, S. & Gani, N.D. (2025). AGU25, New Orleans. Poster H21Y.", url: "https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1902919" }
   ],
@@ -1699,7 +1700,7 @@ const DATA = {
   // Retrieval table for the "query the model" box. Keys are lowercase stems.
   qa: [
     { k: ["research", "work on", "study", "thesis", "flood", "deep learning", "cnn", "what does"], src: "§ Research",
-      a: "His core research is deep learning for flood susceptibility mapping: a geology-aware, patch-based CNN trained on the North Fork Kentucky River basin using LiDAR DEM derivatives, Sentinel-2 land cover and NDVI, soils and PRISM rainfall. Earlier work applied RUSLE to soil loss in the same basin (published 2025). At Ohio State he is building geoai-datacubes, a multi-mission Earth-observation pipeline." },
+      a: "His core research is deep learning for flood susceptibility mapping: a geology-aware, patch-based CNN trained on the North Fork Kentucky River basin using LiDAR DEM derivatives, Sentinel-2 land cover and NDVI, soils and PRISM rainfall. That work is accepted in Discover Hazards (2026). Earlier work applied RUSLE to soil loss in the same basin (published 2025). At Ohio State he is building geoai-datacubes, a multi-mission Earth-observation pipeline." },
     { k: ["tool", "software", "stack", "arcgis", "python", "skills", "program", "language", "esri", "envi", "earth engine", "gee"], src: "§ Feature importance",
       a: "The core geospatial stack: ArcGIS Pro, Enterprise, Online, Field Maps and Experience Builder, ENVI for image analysis, and Google Earth Engine for cloud-scale remote sensing; Python (ArcPy), SQL, Arcade and R; QGIS; Trimble R2 RTK GNSS, UAV/drone systems and 3-D scanning. On the modeling side: CNNs, supervised ML, remote sensing and LiDAR/DEM analysis." },
     { k: ["where", "now", "currently", "location", "based", "live", "ohio", "osu"], src: "§ Dataset",
@@ -1707,7 +1708,7 @@ const DATA = {
     { k: ["education", "degree", "gpa", "master", "bachelor", "phd", "school", "university"], src: "§ Dataset",
       a: "B.S. Geomatics Engineering, Tribhuvan University (2023, 77.93%); M.S. Geoscience, Western Kentucky University (2026, GPA 4.0, thesis on DL flood susceptibility); Ph.D. Earth Science, The Ohio State University (2026 →, fully funded)." },
     { k: ["publish", "paper", "publication", "journal", "doi", "article"], src: "§ Publications",
-      a: "One peer-reviewed paper: Pahari & Gani (2025), RUSLE soil loss in the North Fork Kentucky River basin, Journal of the Kentucky Academy of Science 86(1). A second manuscript on geology-aware deep learning for flood susceptibility is in review at Natural Hazards, plus AGU25 and Kentucky GIS Conference abstracts." },
+      a: "Two peer-reviewed papers. Pahari & Gani (2025), RUSLE soil loss in the North Fork Kentucky River basin, Journal of the Kentucky Academy of Science 86(1). A second paper, on geology-aware, patch-based deep learning for flood susceptibility, is accepted and in press in Discover Hazards (2026, doi:10.1007/s44475-026-00077-6), plus AGU25 and Kentucky GIS Conference abstracts." },
     { k: ["experience", "job", "intern", "work history", "employ", "stormwater", "warren"], src: "§ Training log",
       a: "Two summers with Warren County Stormwater (2025 GIS Technician intern: RTK GNSS asset inventory, SQL geodatabase, Field Maps + Arcade, Experience Builder public app; 2026 GIS Technician: ArcGIS Enterprise data and QA/QC); two years as Graduate Teaching and Research Assistant at WKU; Geomatics Instructor in Dailekh, Nepal; now GTA and PhD researcher at Ohio State." },
     { k: ["teach", "class", "course", "student", "instruct", "lab"], src: "§ Training log",
@@ -2041,7 +2042,7 @@ const FIGS = {
     <article class="card">${r.fig && FIGS[r.fig] ? `<figure class="fig">${FIGS[r.fig]}</figure>` : ""}<h3>${esc(r.title)}</h3><p>${esc(r.body)}</p>
       <div class="tags">${r.tools.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></article>`).join("");
   $("#pubs").innerHTML = DATA.publications.map(p => {
-    const cls = p.status === "published" ? "" : p.status === "in review" ? "rev" : "abs";
+    const cls = p.status === "published" || p.status === "in press" ? "" : p.status === "in review" ? "rev" : "abs";
     const title = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
     return `<div class="pub"><span class="st ${cls}">${esc(p.status)}</span><div><div class="ti">${title}</div><div class="ve">${esc(p.venue)}</div></div></div>`;
   }).join("");
