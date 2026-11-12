@@ -425,7 +425,9 @@ body.recruiter .epoch-track{display:none}
 .v-grat{fill:none; stroke:var(--map-grid); stroke-width:.6}
 .v-border{fill:none; stroke:var(--map-line); stroke-width:.7; stroke-linejoin:round}
 .v-hi,.v-labels{transition:opacity .2s linear}
-.v-labels text{font-family:var(--mono); fill:var(--map-label); text-anchor:middle; letter-spacing:.04em; pointer-events:none}
+.v-labels text{font-family:var(--mono); fill:var(--map-label); text-anchor:middle; letter-spacing:.04em; pointer-events:none; text-rendering:geometricPrecision}
+.vscene{shape-rendering:geometricPrecision}
+#tourMap .leaflet-map-pane{will-change:transform, scale}
 
 /* ---------- research figures ---------- */
 .fig{margin:0 0 14px; background:var(--bg-2); border:1px solid var(--line); border-radius:10px; overflow:hidden}
@@ -2345,20 +2347,36 @@ function leafletRenderer(root, T, onUser) {
   setBase("imagery");
   let programmatic = false;
   const guard = fn => { programmatic = true; try { fn(); } finally { programmatic = false; } };
+  const pane = map.getPane("mapPane"), canScale = typeof CSS !== "undefined" && CSS.supports && CSS.supports("scale", "1.1");
+  const PUSH = 0.25; let push = 0, z0 = null;
+  // fold any pane scale into a real zoom (same view, no visible change) before a flight or a person takes over
+  const commit = () => { if (!push) { pane.style.scale = ""; return; } const c = map.getCenter(), z = map.getZoom() + push; pane.style.scale = ""; push = 0; guard(() => map.setView(c, z, { animate: false })); };
+  root.addEventListener("pointerdown", commit, true);
+  root.addEventListener("wheel", commit, { capture: true, passive: true });
   map.on("dragstart", () => onUser());
   map.on("zoomstart", () => { if (!programmatic) onUser(); });
   // pin clicks: nearest pin within 14px
   root.addEventListener("click", e => { const r = root.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 14; overlay.pins.forEach((p, i) => { const q = map.latLngToContainerPoint(p.ll); const d = Math.hypot(q.x - x, q.y - y); if (d < bd) { bd = d; best = i; } }); if (best != null) onUser(best); });
   const dipZoom = leg => Math.min(9, Math.max(2.2, Math.log2(40000 / Math.max(leg.d, 1)) + 0.5));
   return {
-    dwell(s) { guard(() => map.setView(s.ll, s.zoom, { animate: false })); },
-    dwellFrame(s, f) { if (f > 0 && f < 1) guard(() => map._move(L.latLng(s.ll), s.zoom + 0.35 * f, { flyTo: true })); },
-    flyStart() { guard(() => map._moveStart(true, false)); },
+    dwell(s) {
+      pane.style.scale = ""; push = 0;
+      guard(() => map.setView(s.ll, s.zoom, { animate: false }));
+      const o = map.latLngToContainerPoint(s.ll); pane.style.transformOrigin = `${o.x}px ${o.y}px`;
+    },
+    // the hold: one continuous push-in, done as a GPU scale of the whole map pane around the pin
+    // (stepping Leaflet's fractional zoom every frame re-snaps tiles to whole pixels and shimmers)
+    dwellFrame(s, f) {
+      if (!(f > 0 && f < 1)) return; const e = 0.5 - 0.5 * Math.cos(Math.PI * f);
+      if (canScale) { push = PUSH * e; pane.style.scale = Math.pow(2, push).toFixed(5); }
+      else guard(() => map._move(L.latLng(s.ll), s.zoom + PUSH * e, { flyTo: true }));
+    },
+    flyStart() { commit(); z0 = map.getZoom(); guard(() => map._moveStart(true, false)); },
     flyFrame(leg, fe, pos) {
-      const zA = leg.from.zoom, zB = leg.to.zoom, dip = Math.max(0, (zA + zB) / 2 - dipZoom(leg));
+      const zA = z0 ?? leg.from.zoom, zB = leg.to.zoom, dip = Math.max(0, (zA + zB) / 2 - dipZoom(leg));
       guard(() => map._move(L.latLng(pos), (1 - fe) * zA + fe * zB - Math.sin(Math.PI * fe) * dip, { flyTo: true }));
     },
-    flyEnd(leg) { guard(() => map._move(L.latLng(leg.to.ll), leg.to.zoom)._moveEnd(true)); },
+    flyEnd(leg) { z0 = null; guard(() => map._move(L.latLng(leg.to.ll), leg.to.zoom)._moveEnd(true)); },
     setTrail(cur, prev) { overlay.trail = cur; overlay.prev = prev || null; overlay.draw(); },
     setTracker(t) { overlay.tracker = t; overlay.draw(); },
     setPins(pins) { overlay.pins = pins; overlay.draw(); },
@@ -2406,14 +2424,15 @@ function vectorRenderer(root, T, onUser) {
   cv.addEventListener("pointerup", e => { if (drag && !drag.moved) { const r = cv.getBoundingClientRect(); const i = hit(e.clientX - r.left, e.clientY - r.top); if (i != null) onUser(i); } drag = null; cv.style.cursor = "grab"; });
   cv.addEventListener("wheel", e => { e.preventDefault(); onUser(); const f = Math.exp(e.deltaY * 0.0015); cam.w = Math.min(1000, Math.max(18, cam.w * f)); render(); }, { passive: false });
   const dipWidth = leg => Math.min(1000, Math.max(70, 2.4 * leg.d / 40 + 30));
-  const widthAt = (leg, fe) => { const a = Math.log(leg.from.vw), b = Math.log(leg.to.vw), m = Math.log(dipWidth(leg)); return Math.exp((1 - fe) * a + fe * b + Math.sin(Math.PI * fe) * Math.max(0, m - (a + b) / 2)); };
+  let wStart = null;
+  const widthAt = (leg, fe) => { const a = Math.log(wStart || leg.from.vw), b = Math.log(leg.to.vw), m = Math.log(dipWidth(leg)); return Math.exp((1 - fe) * a + fe * b + Math.sin(Math.PI * fe) * Math.max(0, m - (a + b) / 2)); };
   measure(); addEventListener("resize", () => { measure(); render(); });
   return {
     dwell(s) { const [x, y] = GEO.project(s.ll); cam.cx = x; cam.cy = y; cam.w = s.vw; render(); },
-    dwellFrame(s, f) { if (f > 0 && f < 1) { cam.w = s.vw * (1 - 0.15 * f); render(); } },
-    flyStart() {},
+    dwellFrame(s, f) { if (f > 0 && f < 1) { cam.w = s.vw * Math.pow(2, -0.25 * (0.5 - 0.5 * Math.cos(Math.PI * f))); render(); } },
+    flyStart() { wStart = cam.w; },
     flyFrame(leg, fe, pos) { const [x, y] = GEO.project(pos); cam.cx = x; cam.cy = y; cam.w = widthAt(leg, fe); render(); },
-    flyEnd(leg) { this.dwell(leg.to); },
+    flyEnd(leg) { wStart = null; this.dwell(leg.to); },
     setTrail(cur, prev) { trailLL = cur; prevLL = prev || null; render(); },
     setTracker(t) { S.tracker = t; render(); },
     setPins(pins) { S.pins = pins; render(); },
