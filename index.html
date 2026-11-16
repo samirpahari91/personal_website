@@ -125,12 +125,13 @@ p{margin:0}
 
 /* ---------- hero console ---------- */
 .hero{padding-block:clamp(28px,5vw,56px) clamp(24px,4vw,40px)}
-.hero-head{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:end; margin-bottom:26px}
+.hero-head{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:28px 40px; align-items:end; margin-bottom:26px}
 .hero-head h1{font-size:clamp(2.6rem,7vw,5.4rem); font-weight:700; letter-spacing:-.03em; line-height:.95; font-variation-settings:"opsz" 96}
 .hero-head h1 .thin{font-weight:300; color:var(--fg-2)}
 .hero-tag{font-size:clamp(1.02rem,1.5vw,1.2rem); color:var(--fg-2); max-width:36ch; margin-top:14px}
 .hero-tag b{color:var(--fg); font-weight:500}
-.hero-meta{display:flex; flex-direction:column; gap:10px; align-items:flex-start}
+.hero-side{display:flex; flex-direction:column; gap:18px; min-width:0}
+.hero-meta{display:flex; flex-direction:row; gap:16px; align-items:center}
 .hero-meta .photo{
   width:116px; height:116px; border-radius:28px; object-fit:cover; border:1px solid var(--line-2);
   background:linear-gradient(135deg,var(--accent-soft),var(--amber-soft)); display:grid; place-items:center;
@@ -328,6 +329,33 @@ body.recruiter .epoch-track{display:none}
 .hi{color:var(--fg); font-weight:500}
 
 
+
+/* dispatch: field bulletin beside the bio */
+.dispatch{background:var(--panel); border:1px solid var(--line-2); border-radius:14px; box-shadow:var(--shadow); overflow:hidden; animation:in .6s ease both .2s}
+.dsp-h{display:flex; align-items:center; gap:10px; padding:9px 14px; border-bottom:1px solid var(--line); background:color-mix(in srgb, var(--amber) 7%, var(--panel))}
+.dsp-tag{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--amber)}
+.dsp-tag i{width:7px; height:7px; border-radius:50%; background:var(--val); animation:incPulse 1.6s ease-out infinite}
+.dsp-seis{flex:1; min-width:40px; height:22px; display:block}
+.dsp-today{font-family:var(--mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
+.dsp-list{list-style:none; margin:0; padding:4px 0}
+.dsp-item{display:grid; grid-template-columns:44px minmax(0,1fr) auto; gap:12px; align-items:center; padding:9px 14px; border-top:1px dashed var(--line)}
+.dsp-item:first-child{border-top:0}
+.dsp-item.lead{background:color-mix(in srgb, var(--accent) 6%, transparent)}
+.dsp-cal{width:44px; border:1px solid var(--line-2); border-radius:8px; overflow:hidden; text-align:center; background:var(--panel); font-family:var(--mono); line-height:1.05}
+.dsp-cal b{display:block; font-size:.92rem; font-weight:600; color:var(--fg); padding:5px 0 3px; font-variant-numeric:tabular-nums; white-space:nowrap; letter-spacing:-.02em}
+.dsp-cal span{display:block; font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-ink); background:var(--accent); padding:2px 0}
+.dsp-item.recent .dsp-cal span, .dsp-item.done .dsp-cal span{background:var(--muted)}
+.dsp-item.live .dsp-cal span{background:var(--val)}
+.dsp-txt{display:flex; flex-direction:column; min-width:0}
+.dsp-k{font-family:var(--mono); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.dsp-item.lead .dsp-k{color:var(--accent)}
+.dsp-txt b{font-family:var(--display); font-weight:600; font-size:.98rem; line-height:1.25; color:var(--fg)}
+.dsp-item:not(.lead) .dsp-txt b{font-size:.9rem; font-weight:500}
+.dsp-txt small{font-size:.78rem; color:var(--fg-2); line-height:1.35}
+.dsp-when{font-family:var(--mono); font-size:.72rem; font-weight:600; color:var(--amber); white-space:nowrap; text-align:right}
+.dsp-item.live .dsp-when{color:var(--val)}
+.dsp-item.done .dsp-when{color:var(--muted); font-weight:500}
+
 /* incoming: what's next, inside the training window */
 .incoming{position:absolute; top:12px; right:14px; z-index:3; width:min(292px, calc(100% - 70px)); background:var(--panel); border:1px solid var(--line-2); border-radius:12px; box-shadow:var(--shadow); padding:12px 14px 10px; display:flex; flex-direction:column; gap:6px; animation:incIn .55s cubic-bezier(.2,.8,.2,1) both}
 @keyframes incIn{from{opacity:0; transform:translateY(-10px) scale(.97)}to{opacity:1; transform:none}}
@@ -356,6 +384,9 @@ body.recruiter .epoch-track{display:none}
 #cv .next{margin-top:14px; padding:10px 14px; border:1px dashed var(--amber); border-radius:10px; font-size:.9rem; color:var(--fg-2)}
 #cv .next b{color:var(--amber); font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; margin-right:8px}
 @media (max-width:560px){
+  .dsp-item{grid-template-columns:40px minmax(0,1fr); gap:10px}
+  .dsp-when{grid-column:2; text-align:left}
+  .dsp-cal{width:40px}
   .incoming{position:relative; top:auto; right:auto; width:auto; margin:8px 6px 4px}
   .inc-chip{position:relative; top:auto; right:auto; margin:6px 6px 2px}
 }
@@ -506,6 +537,7 @@ body.recruiter .epoch-track{display:none}
   .stopcard{max-height:340px; flex:none}
   .hero-head{grid-template-columns:1fr}
   .hero-meta{flex-direction:row; align-items:center; gap:16px}
+  .hero-head{align-items:start}
   .console{grid-template-columns:1fr}
   .research{grid-template-columns:1fr}
   .dataset{grid-template-columns:1fr}
@@ -1247,12 +1279,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
         <h1 style="margin-top:12px">Samir <span class="thin">Pahari</span></h1>
         <p class="hero-tag">I'm a geoscientist specializing in leveraging <b>remote sensing, GIS and machine/deep learning</b> across many applications, from flood and landslide hazards to soil erosion, precision agriculture and Earth-observation datacubes. I work daily in the core geospatial stack: <b>ArcGIS</b>, <b>ENVI</b> and <b>Google Earth Engine</b>. PhD student at <b>The Ohio State University</b>, BuckAI Observatory lab.</p>
       </div>
+      <div class="hero-side">
+      <aside class="dispatch" id="dispatch" aria-label="Latest news" aria-live="off"></aside>
       <div class="hero-meta">
         <div class="photo"><img id="photo" src="assets/samir.jpg" alt="Samir Pahari in front of a banded gneiss wall" onerror="this.hidden=true"></div>
         <div>
           <div class="loc">Columbus, Ohio · School of Earth Sciences</div>
           <div class="loc">from Pokhara, Nepal · via Bowling Green, Kentucky</div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -1520,8 +1555,16 @@ const DATA = {
   // queued lines in the training log, and an answer in the Q&A. Items with dates expire on their own after `end`.
   // To retire an item, delete it here (and ask for it to be moved into the CV sections).
   upcoming: [
+    { id: "gisday26", label: "GIS Day", kind: "talk", title: "Lightning talk, GIS Day 2026", where: "Research Commons, The Ohio State University", start: "2026-11-18", end: "2026-11-18", role: "speaker" },
     { id: "agu26", label: "AGU26", kind: "conference", title: "AGU Annual Meeting 2026", where: "Moscone Center, San Francisco", start: "2026-12-07", end: "2026-12-11", role: "attending", url: "https://www.agu.org/annual-meeting" },
     { id: "dh", label: "Discover Hazards", kind: "paper", title: "Geology-aware, patch-based deep learning for flood susceptibility mapping", where: "Discover Hazards (Springer Nature)", role: "accepted, in production · doi:10.1007/s44475-026-00077-6", badge: "in press", url: "https://link.springer.com/journal/44475" }
+  ],
+
+  // Recent highlights for the Dispatch panel beside the bio (newest first). `when` is YYYY-MM or YYYY-MM-DD.
+  // Finished `upcoming` items also appear there as "just happened" for 3 weeks after they end.
+  recent: [
+    { when: "2026-11", kind: "paper", title: "Flood-susceptibility paper accepted", where: "Discover Hazards · in press" },
+    { when: "2026-10", kind: "talk", title: "Presented geoai-datacubes for the BuckAI Observatory", where: "Google | Ohio State partnership announcement" }
   ],
 
   // The journey: three stops, two flights. `at` names a coordinate in tools/genmap.mjs; items are revealed one by one while the camera holds.
@@ -1789,17 +1832,18 @@ const fmtRange = (a, b) => {
   if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) return `${a.getDate()}–${b.getDate()} ${MONTHS[a.getMonth()]} ${a.getFullYear()}`;
   return `${a.getDate()} ${MONTHS[a.getMonth()]} – ${b.getDate()} ${MONTHS[b.getMonth()]} ${b.getFullYear()}`;
 };
-const UPCOMING = (DATA.upcoming || []).map(u => {
+const UP_ALL = (DATA.upcoming || []).map(u => {
   const start = parseDay(u.start), end = parseDay(u.end) || start;
   let status = "pending", when = u.badge || u.role || "", days = null;
   if (start) {
     days = Math.round((start - TODAY) / 864e5);
     if (TODAY > end) status = "past";
-    else if (days <= 0) { status = "live"; when = "happening now"; }
+    else if (days <= 0) { status = "live"; when = +start === +end ? "today" : "happening now"; }
     else { status = "soon"; when = days === 1 ? "tomorrow" : days <= 60 ? `in ${days} days` : `in ${Math.round(days / 7)} weeks`; }
   }
-  return { ...u, startD: start, endD: end, status, when, days, range: fmtRange(start, end), y: start ? decYear(start) : null };
-}).filter(u => u.status !== "past");
+  return { ...u, startD: start, endD: end, status, when, days, range: fmtRange(start, end), y: start ? decYear(start) : null, ago: end ? Math.round((TODAY - end) / 864e5) : null };
+}).sort((a, b) => (a.startD ? +a.startD : Infinity) - (b.startD ? +b.startD : Infinity));
+const UPCOMING = UP_ALL.filter(u => u.status !== "past");
 const P_TODAY = Math.min(1, Math.max(0, pAt(decYear(TODAY))));
 
 
@@ -1875,7 +1919,8 @@ function drawLoss(hover = null) {
     const amber = cssVar("--amber");
     for (const u of UPCOMING) {
       if (u.y == null) continue; const pu = pAt(u.y); if (pu > pe || pu < 0 || pu > 1) continue;
-      const x = X(pu), base = Y(lossAt(pu).train), y = base - 52;
+      const lane = UPCOMING.filter(o => o.y != null && o.y < u.y && Math.abs(pAt(o.y) - pu) < 0.03).length;
+      const x = X(pu), base = Y(lossAt(pu).train), y = base - 52 - lane * 20;
       c.save(); c.strokeStyle = amber; c.globalAlpha = .7; c.setLineDash([2, 3]); c.lineWidth = 1; c.beginPath(); c.moveTo(x, y + 8); c.lineTo(x, base - 4); c.stroke(); c.restore();
       c.beginPath(); c.arc(x, y, 7, 0, Math.PI * 2); c.fillStyle = panel; c.fill(); c.lineWidth = 2.2; c.strokeStyle = amber; c.stroke();
       c.beginPath(); c.arc(x, y, 2.4, 0, Math.PI * 2); c.fillStyle = amber; c.fill();
@@ -2186,6 +2231,61 @@ const FIGS = {
   if (location.hash === "#cv") set(true);
 })();
 
+
+
+/* ============================================================================ */
+/* dispatch: what's next and what just happened, beside the bio                  */
+/* ============================================================================ */
+(function dispatch() {
+  const box = $("#dispatch"); if (!box) return;
+  const KIND = { talk: "talk", conference: "conference", paper: "publication", release: "release", award: "award" };
+  const ym = s => { const [y, m, d] = s.split("-").map(Number); return { y, m: m - 1, d: d || null }; };
+  const items = [];
+  for (const u of UP_ALL) {
+    if (!u.startD) continue;
+    if (u.status === "past" && u.ago > 21) continue;
+    const past = u.status === "past";
+    const span = u.endD && +u.endD !== +u.startD;
+    items.push({ cls: past ? "done" : u.status, k: (KIND[u.kind] || u.kind) + " · " + u.label, title: u.title, where: u.where,
+      cal: { top: span ? `${u.startD.getDate()}–${u.endD.getDate()}` : String(u.startD.getDate()), bot: MONTHS[u.startD.getMonth()] },
+      when: past ? "just happened" : u.when, sort: +u.startD });
+  }
+  for (const r of DATA.recent || []) {
+    const t = ym(r.when);
+    items.push({ cls: "recent", k: (KIND[r.kind] || r.kind) + " · recent", title: r.title, where: r.where, cal: { top: t.d ? String(t.d) : MONTHS[t.m], bot: t.d ? MONTHS[t.m] : String(t.y) }, when: "", sort: +new Date(t.y, t.m, t.d || 1) });
+  }
+  // next things first (soonest at the top), then what just happened, then older highlights
+  const rank = i => i.cls === "live" ? 0 : i.cls === "soon" ? 1 : i.cls === "done" ? 2 : 3;
+  items.sort((a, b) => rank(a) - rank(b) || (rank(a) < 2 ? a.sort - b.sort : b.sort - a.sort));
+  const show = items.slice(0, 3);
+  if (!show.length) { box.hidden = true; return; }
+  const d = new Date();
+  box.innerHTML = `<div class="dsp-h"><span class="dsp-tag"><i></i>dispatch</span><canvas class="dsp-seis" aria-hidden="true"></canvas><span class="dsp-today">${d.getDate()} ${MONTHS[d.getMonth()]}</span></div>
+    <ol class="dsp-list">${show.map((i, n) => `<li class="dsp-item ${i.cls}${n === 0 ? " lead" : ""}"><div class="dsp-cal"><b>${esc(i.cal.top)}</b><span>${esc(i.cal.bot)}</span></div><div class="dsp-txt"><span class="dsp-k">${esc(i.k)}</span><b>${esc(i.title)}</b><small>${esc(i.where)}</small></div>${i.when ? `<span class="dsp-when">${esc(i.when)}</span>` : ""}</li>`).join("")}</ol>`;
+  // a seismograph trace that kicks every few seconds: the "breaking" signal
+  const cv = box.querySelector(".dsp-seis"), c = cv.getContext("2d");
+  let t0 = performance.now(), raf = null, visible = true;
+  const draw = now => {
+    const r = cv.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1), W = r.width, H = r.height;
+    if (cv.width !== Math.round(W * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+    c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, W, H);
+    const tt = (now - t0) / 1000, mid = H / 2, period = 4.2, speed = W / 3.2;
+    c.beginPath();
+    for (let x = 0; x <= W; x += 1) {
+      const ts = tt - (W - x) / speed;                                   // time this sample was written
+      const ph = ((ts % period) + period) % period;                      // seconds since the last event
+      const quake = ph < 1.4 ? Math.exp(-ph * 3.2) * Math.sin(ph * 46) * (mid - 2) : 0;
+      const noise = Math.sin(ts * 23.7) * .7 + Math.sin(ts * 51.3) * .5;
+      const y = mid - quake - noise;
+      x ? c.lineTo(x, y) : c.moveTo(x, y);
+    }
+    c.strokeStyle = cssVar("--amber"); c.lineWidth = 1.3; c.lineJoin = "round"; c.stroke();
+    c.beginPath(); c.arc(W - 1.5, mid, 2, 0, Math.PI * 2); c.fillStyle = cssVar("--amber"); c.fill();
+    if (!reduceMotion && visible) raf = requestAnimationFrame(draw);
+  };
+  new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible && !raf && !reduceMotion) raf = requestAnimationFrame(n => { raf = null; draw(n); }); else if (!visible) { cancelAnimationFrame(raf); raf = null; } })).observe(box);
+  draw(performance.now() + (reduceMotion ? 900 : 0));
+})();
 
 /* ============================================================================ */
 /* incoming: what's next, as a pop-up in the training window                     */
