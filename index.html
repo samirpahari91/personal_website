@@ -334,12 +334,27 @@ body.recruiter .epoch-track{display:none}
 
 
 /* dispatch: field bulletin beside the bio */
+@keyframes incPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--amber) 45%, transparent)}100%{box-shadow:0 0 0 9px transparent}}
 .dispatch{background:var(--panel); border:1px solid var(--line-2); border-radius:14px; box-shadow:var(--shadow); overflow:hidden; animation:in .6s ease both .2s}
 .dsp-h{display:flex; align-items:center; gap:10px; padding:9px 14px; border-bottom:1px solid var(--line); background:color-mix(in srgb, var(--amber) 7%, var(--panel))}
 .dsp-tag{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--amber)}
 .dsp-tag i{width:7px; height:7px; border-radius:50%; background:var(--val); animation:incPulse 1.6s ease-out infinite}
 .dsp-seis{flex:1; min-width:40px; height:22px; display:block}
 .dsp-today{font-family:var(--mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
+.dsp-one{display:grid; grid-template-columns:58px minmax(0,1fr); gap:16px; align-items:start; padding:16px 18px 18px; transition:opacity .9s ease, filter .9s ease, transform .9s ease}
+.dsp-one.out{opacity:0; filter:blur(4px); transform:translateY(6px)}
+.dsp-one .dsp-cal{width:58px}
+.dsp-one .dsp-cal b{font-size:1.25rem; padding:8px 0 5px}
+.dsp-one .dsp-cal span{font-size:.62rem; padding:3px 0}
+.dsp-one .dsp-txt b{font-size:1.18rem; margin-top:2px}
+.dsp-one .dsp-txt small{font-size:.84rem; margin-top:2px}
+.dsp-one .dsp-k{color:var(--accent)}
+.dsp-one .dsp-when{display:inline-block; align-self:flex-start; margin-top:10px; text-align:left; padding:3px 10px; border-radius:99px; background:var(--amber-soft)}
+.dsp-one.live .dsp-when{background:color-mix(in srgb, var(--val) 14%, transparent)}
+.dsp-one.recent .dsp-cal span, .dsp-one.done .dsp-cal span{background:var(--muted)}
+.dsp-one.live .dsp-cal span{background:var(--val)}
+.dispatch.ping{animation:dspPing 1.2s ease}
+@keyframes dspPing{0%,100%{box-shadow:var(--shadow)}35%{box-shadow:0 0 0 4px var(--amber-soft), var(--shadow)}}
 .dsp-list{list-style:none; margin:0; padding:4px 0}
 .dsp-item{display:grid; grid-template-columns:44px minmax(0,1fr) auto; gap:12px; align-items:center; padding:9px 14px; border-top:1px dashed var(--line)}
 .dsp-item:first-child{border-top:0}
@@ -359,39 +374,12 @@ body.recruiter .epoch-track{display:none}
 .dsp-item.live .dsp-when{color:var(--val)}
 .dsp-item.done .dsp-when{color:var(--muted); font-weight:500}
 
-/* incoming: what's next, inside the training window */
-.incoming{position:absolute; top:12px; right:14px; z-index:3; width:min(292px, calc(100% - 70px)); background:var(--panel); border:1px solid var(--line-2); border-radius:12px; box-shadow:var(--shadow); padding:12px 14px 10px; display:flex; flex-direction:column; gap:6px; animation:incIn .55s cubic-bezier(.2,.8,.2,1) both}
-@keyframes incIn{from{opacity:0; transform:translateY(-10px) scale(.97)}to{opacity:1; transform:none}}
-.inc-h{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--amber)}
-.inc-dot{width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 0 0 var(--amber-soft); animation:incPulse 1.8s ease-out infinite; flex:0 0 auto}
-@keyframes incPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--amber) 45%, transparent)}100%{box-shadow:0 0 0 9px transparent}}
-.inc-k{flex:1; min-width:0}
-.inc-x{border:0; background:transparent; color:var(--muted); font-size:1rem; line-height:1; padding:0 2px; border-radius:4px}
-.inc-x:hover{color:var(--fg)}
-.inc-body{display:flex; flex-direction:column; gap:2px}
-.inc-body b{font-family:var(--display); font-weight:600; font-size:1.05rem; line-height:1.2; color:var(--fg)}
-.inc-body span{font-size:.82rem; color:var(--fg-2)}
-.inc-body a{font-family:var(--mono); font-size:.72rem; margin-top:2px}
-.inc-body.swap{animation:incSwap .4s ease both}
-@keyframes incSwap{from{opacity:0; transform:translateX(8px)}to{opacity:1; transform:none}}
-.inc-f{display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:6px; border-top:1px dashed var(--line-2)}
-.inc-when{font-family:var(--mono); font-size:.8rem; font-weight:600; color:var(--amber); font-variant-numeric:tabular-nums; text-align:right}
-.inc-when.live{color:var(--good)}
-.inc-dots{display:flex; gap:5px}
-.inc-dots button{width:7px; height:7px; padding:0; border-radius:50%; border:0; background:var(--line-2)}
-.inc-dots button.on{background:var(--amber)}
-.inc-chip{position:absolute; top:12px; right:14px; z-index:3; display:inline-flex; align-items:center; gap:8px; padding:6px 11px; border-radius:99px; border:1px solid var(--line-2); background:var(--panel); font-family:var(--mono); font-size:.72rem; color:var(--fg); box-shadow:var(--shadow)}
-.inc-chip:hover{border-color:var(--amber)}
-.inc-chip i{width:7px; height:7px; border-radius:50%; background:var(--amber); animation:incPulse 1.8s ease-out infinite}
-.inc-chip b{color:var(--amber); font-weight:600}
 #cv .next{margin-top:14px; padding:10px 14px; border:1px dashed var(--amber); border-radius:10px; font-size:.9rem; color:var(--fg-2)}
 #cv .next b{color:var(--amber); font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; margin-right:8px}
 @media (max-width:560px){
   .dsp-item{grid-template-columns:40px minmax(0,1fr); gap:10px}
   .dsp-when{grid-column:2; text-align:left}
   .dsp-cal{width:40px}
-  .incoming{position:relative; top:auto; right:auto; width:auto; margin:8px 6px 4px}
-  .inc-chip{position:relative; top:auto; right:auto; margin:6px 6px 2px}
 }
 @media print{ #cv .next{display:none} }
 
@@ -1296,12 +1284,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
           <div class="legend"><span class="train"><i></i>train</span><span class="val"><i></i>validation</span></div>
         </div>
         <div class="chart-wrap"><canvas id="loss" aria-label="Training and validation loss falling across the years 2018 to 2026, with real milestones marked and upcoming events on the forecast" role="img"></canvas><div class="tip" id="lossTip"></div>
-          <div class="incoming" id="incoming" hidden role="status" aria-live="polite">
-            <div class="inc-h"><span class="inc-dot" aria-hidden="true"></span><span class="inc-k" id="incKind">incoming · next epoch</span><button class="inc-x" id="incMin" type="button" aria-label="Minimise">–</button></div>
-            <div class="inc-body" id="incBody"></div>
-            <div class="inc-f"><span class="inc-dots" id="incDots"></span><span class="inc-when" id="incWhen"></span></div>
-          </div>
-          <button class="inc-chip" id="incChip" type="button" hidden></button>
         </div>
         <div class="mlegend" id="mlegend" aria-label="Milestone marker legend"></div>
         <div class="stats">
@@ -1947,7 +1929,7 @@ function drawLoss(hover = null) {
 }
 lossCv.addEventListener("mousemove", e => { const r = lossCv.getBoundingClientRect(); drawLoss({ x: e.clientX - r.left, y: e.clientY - r.top }); });
 lossCv.addEventListener("mouseleave", () => drawLoss());
-lossCv.addEventListener("click", e => { const r = lossCv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; const hit = markerHits.find(h => h.m.type === "upcoming" && Math.hypot(h.x - x, h.y - y) < 14); if (hit) INCOMING.open(UPCOMING.indexOf(hit.m.u)); });
+lossCv.addEventListener("click", e => { const r = lossCv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; const hit = markerHits.find(h => h.m.type === "upcoming" && Math.hypot(h.x - x, h.y - y) < 14); if (hit) { const d = $("#dispatch"); if (!d) return; d.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" }); d.classList.remove("ping"); void d.offsetWidth; d.classList.add("ping"); } });
 addEventListener("resize", () => drawLoss());
 // marker legend
 $("#mlegend").innerHTML = Object.entries(MTYPES).map(([t, v]) => {
@@ -1977,7 +1959,7 @@ function setStats() {
   $("#sEpoch").textContent = Math.min(YEARS[YEARS.length - 1], Math.floor(yearAt(P))); $("#sTrain").textContent = l.train.toFixed(3); $("#sVal").textContent = l.val.toFixed(3); $("#sFeat").textContent = feats;
 }
 function resetRun() {
-  cancelAnimationFrame(raf); P = 0; emitted = 0; feats = 0; playing = false; finished = false; if (typeof INCOMING !== "undefined") INCOMING.hide();
+  cancelAnimationFrame(raf); P = 0; emitted = 0; feats = 0; playing = false; finished = false;
   log.innerHTML = ""; learned.innerHTML = "";
   $("#logState").textContent = "initializing…"; $("#runDot").classList.add("live");
   const d = document.createElement("div"); d.innerHTML = `<span class="t">----</span><span class="k">init</span><span class="m">loading record · ${DATA.epochs.length} epochs · ${DATA.milestones.length} milestones · seed=1997</span>`; log.appendChild(d);
@@ -1994,7 +1976,6 @@ function finishRun() {
   playing = false; $("#logState").textContent = "model ready ✓"; $("#runDot").classList.remove("live");
   for (const u of UPCOMING) { const q = document.createElement("div"); q.innerHTML = `<span class="t">next</span><span class="k w">queue</span><span class="m">${esc(u.label)} · ${esc(u.title)}${u.range ? " · " + esc(u.range) : ""} · ${esc(u.status === "live" ? "happening now" : u.start ? (u.role ? u.role + " · " : "") + u.when : u.role)}</span>`; log.appendChild(q); }
   const d = document.createElement("div"); d.innerHTML = `<span class="t">done</span><span class="k ok">save</span><span class="m">checkpoint written · val loss ${lossAt(P_TODAY).val.toFixed(3)} · open to collaboration<span class="cur"></span></span>`; log.appendChild(d); log.scrollTop = log.scrollHeight;
-  setTimeout(() => INCOMING.open(0, true), reduceMotion ? 0 : 500);
 }
 function play() {
   resetRun(); playing = true; $("#logState").textContent = "training…";
@@ -2222,7 +2203,7 @@ const FIGS = {
     <h2>Outreach</h2>${DATA.outreach.map(o => row("", o.t, o.s)).join("")}
     <h2>Affiliations</h2><p class="inline">${DATA.affiliations.map(esc).join(" · ")}</p>
     <div class="cvtop"><a class="btn primary" href="${esc(DATA.cvFile)}" target="_blank" rel="noopener">Download CV (PDF)</a><button class="btn" type="button" data-mode>← Back to the training run</button></div>`;
-  const set = on => { document.body.classList.toggle("recruiter", on); btn.setAttribute("aria-pressed", String(on)); btn.innerHTML = on ? `Story mode <span class="kbd">R</span>` : `Recruiter mode <span class="kbd">R</span>`; if (on) { scrollTo({ top: 0, behavior: "instant" }); INCOMING.hide(); } else { drawLoss(); if (finished) INCOMING.open(0, true); } };
+  const set = on => { document.body.classList.toggle("recruiter", on); btn.setAttribute("aria-pressed", String(on)); btn.innerHTML = on ? `Story mode <span class="kbd">R</span>` : `Recruiter mode <span class="kbd">R</span>`; if (on) scrollTo({ top: 0, behavior: "instant" }); else drawLoss(); };
   btn.addEventListener("click", () => set(!document.body.classList.contains("recruiter")));
   $$("[data-mode]").forEach(b => b.addEventListener("click", () => set(!document.body.classList.contains("recruiter"))));
   addEventListener("keydown", e => { if ((e.key === "r" || e.key === "R") && !/input|textarea/i.test(document.activeElement?.tagName || "") && !e.metaKey && !e.ctrlKey) set(!document.body.classList.contains("recruiter")); });
@@ -2246,7 +2227,7 @@ const FIGS = {
     const span = u.endD && +u.endD !== +u.startD;
     items.push({ cls: past ? "done" : u.status, k: (KIND[u.kind] || u.kind) + " · " + u.label, title: u.title, where: u.where,
       cal: { top: span ? `${u.startD.getDate()}–${u.endD.getDate()}` : String(u.startD.getDate()), bot: MONTHS[u.startD.getMonth()] },
-      when: past ? "just happened" : u.when, sort: +u.startD });
+      when: past ? "just happened" : u.when, sort: +u.startD, day: span ? "" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][u.startD.getDay()] });
   }
   for (const r of DATA.recent || []) {
     const t = ym(r.when);
@@ -2255,19 +2236,24 @@ const FIGS = {
   // next things first (soonest at the top), then what just happened, then older highlights
   const rank = i => i.cls === "live" ? 0 : i.cls === "soon" ? 1 : i.cls === "done" ? 2 : 3;
   items.sort((a, b) => rank(a) - rank(b) || (rank(a) < 2 ? a.sort - b.sort : b.sort - a.sort));
-  const show = items.slice(0, 3);
+  const show = items.slice(0, 1);
   if (!show.length) { box.hidden = true; return; }
   const d = new Date();
+  const i = show[0];
+  const wd = i.day ? i.day + " · " : "";
   box.innerHTML = `<div class="dsp-h"><span class="dsp-tag"><i></i>dispatch</span><canvas class="dsp-seis" aria-hidden="true"></canvas><span class="dsp-today">${d.getDate()} ${MONTHS[d.getMonth()]}</span></div>
-    <ol class="dsp-list">${show.map((i, n) => `<li class="dsp-item ${i.cls}${n === 0 ? " lead" : ""}"><div class="dsp-cal"><b>${esc(i.cal.top)}</b><span>${esc(i.cal.bot)}</span></div><div class="dsp-txt"><span class="dsp-k">${esc(i.k)}</span><b>${esc(i.title)}</b><small>${esc(i.where)}</small></div>${i.when ? `<span class="dsp-when">${esc(i.when)}</span>` : ""}</li>`).join("")}</ol>`;
+    <div class="dsp-one ${i.cls}" id="dspOne"><div class="dsp-cal"><b>${esc(i.cal.top)}</b><span>${esc(i.cal.bot)}</span></div>
+      <div class="dsp-txt"><span class="dsp-k">${esc(i.k)}</span><b>${esc(i.title)}</b><small>${esc(wd)}${esc(i.where)}</small>${i.when ? `<span class="dsp-when">${esc(i.when)}</span>` : ""}</div></div>`;
+  const one = box.querySelector("#dspOne");
   // a seismograph trace that kicks every few seconds: the "breaking" signal
   const cv = box.querySelector(".dsp-seis"), c = cv.getContext("2d");
+  const PERIOD = 8;
   let t0 = performance.now(), raf = null, visible = true;
   const draw = now => {
     const r = cv.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1), W = r.width, H = r.height;
     if (cv.width !== Math.round(W * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
     c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, W, H);
-    const tt = (now - t0) / 1000, mid = H / 2, period = 4.2, speed = W / 3.2;
+    const tt = (now - t0) / 1000, mid = H / 2, period = PERIOD, speed = W / 3.2;
     c.beginPath();
     for (let x = 0; x <= W; x += 1) {
       const ts = tt - (W - x) / speed;                                   // time this sample was written
@@ -2279,40 +2265,11 @@ const FIGS = {
     }
     c.strokeStyle = cssVar("--amber"); c.lineWidth = 1.3; c.lineJoin = "round"; c.stroke();
     c.beginPath(); c.arc(W - 1.5, mid, 2, 0, Math.PI * 2); c.fillStyle = cssVar("--amber"); c.fill();
+    if (!reduceMotion) { const ph = tt % PERIOD; one.classList.toggle("out", ph > PERIOD - 0.9 && tt > 1); }
     if (!reduceMotion && visible) raf = requestAnimationFrame(draw);
   };
   new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible && !raf && !reduceMotion) raf = requestAnimationFrame(n => { raf = null; draw(n); }); else if (!visible) { cancelAnimationFrame(raf); raf = null; } })).observe(box);
   draw(performance.now() + (reduceMotion ? 900 : 0));
-})();
-
-/* ============================================================================ */
-/* incoming: what's next, as a pop-up in the training window                     */
-/* ============================================================================ */
-const INCOMING = (() => {
-  const box = $("#incoming"), body = $("#incBody"), dots = $("#incDots"), when = $("#incWhen"), chip = $("#incChip"), kind = $("#incKind");
-  let i = 0, timer = null, hover = false, dismissed = false;
-  const KIND = { conference: "incoming · conference", paper: "incoming · publication", talk: "incoming · talk", release: "incoming · release" };
-  const render = (k, animate) => {
-    const u = UPCOMING[k]; if (!u) return; i = k;
-    kind.textContent = u.status === "live" ? "live now" : (KIND[u.kind] || "incoming · next epoch");
-    body.innerHTML = `<b>${esc(u.title)}</b><span>${esc(u.where)}${u.range ? " · " + esc(u.range) : ""}</span>${u.role ? `<span>${esc(u.role[0].toUpperCase() + u.role.slice(1))}</span>` : ""}${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} →</a>` : ""}`;
-    if (animate) { body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap"); }
-    when.textContent = u.when; when.classList.toggle("live", u.status === "live");
-    dots.innerHTML = UPCOMING.length > 1 ? UPCOMING.map((_, j) => `<button type="button" class="${j === k ? "on" : ""}" aria-label="Item ${j + 1}"></button>`).join("") : "";
-    dots.querySelectorAll("button").forEach((b, j) => b.addEventListener("click", () => { render(j, true); restart(); }));
-    const first = UPCOMING[0];
-    chip.innerHTML = `<i></i>next: ${esc(first.label)} · <b>${esc(first.start ? (first.status === "live" ? "now" : first.when.replace("in ", "")) : "soon")}</b>`;
-  };
-  const restart = () => { clearInterval(timer); if (UPCOMING.length > 1 && !reduceMotion) timer = setInterval(() => { if (!hover && !box.hidden) render((i + 1) % UPCOMING.length, true); }, 6500); };
-  box.addEventListener("mouseenter", () => hover = true); box.addEventListener("mouseleave", () => hover = false);
-  $("#incMin").addEventListener("click", () => { dismissed = true; box.hidden = true; chip.hidden = false; clearInterval(timer); });
-  chip.addEventListener("click", () => { dismissed = false; open(0); });
-  function open(k = 0, auto = false) {
-    if (!UPCOMING.length || document.body.classList.contains("recruiter")) return;
-    if (auto && dismissed) { render(0); chip.hidden = false; return; }
-    render(Math.max(0, k)); chip.hidden = true; box.hidden = false; box.style.animation = "none"; void box.offsetWidth; box.style.animation = ""; restart();
-  }
-  return { open, hide() { box.hidden = true; chip.hidden = true; clearInterval(timer); } };
 })();
 
 /* ============================================================================ */
