@@ -1528,14 +1528,14 @@ const DATA = {
       { k: "ok",   m: "M.S. complete · GPA 4.0 · thesis: geology-aware patch CNN for flood susceptibility" },
       { k: "ok",   m: "ACCEPTED · geology-aware deep learning for flood susceptibility · Discover Hazards", feat: "Discover Hazards paper" },
       { k: "load", m: "PhD Earth Science · The Ohio State University · BuckAI Observatory (Dr. Joachim Moortgat)", feat: "GeoAI" },
-      { k: "ok",   m: "geoai-datacubes presented at Google | Ohio State partnership announcement", feat: "EO datacubes" } ] }
+      { k: "ok",   m: "geoai-datacubes presented at Google | Ohio State partnership announcement", feat: "EO datacubes" },
+      { k: "ok",   m: "lightning talk · GIS Day 2026 · Research Commons, The Ohio State University" } ] }
   ],
 
   // Coming up. Shown as a pop-up in the training window, a hollow marker on the forecast part of the loss curve,
   // queued lines in the training log, and an answer in the Q&A. Items with dates expire on their own after `end`.
   // To retire an item, delete it here (and ask for it to be moved into the CV sections).
   upcoming: [
-    { id: "gisday26", label: "GIS Day", kind: "talk", title: "Lightning talk, GIS Day 2026", where: "Research Commons, The Ohio State University", start: "2026-11-18", end: "2026-11-18", role: "speaker" },
     { id: "agu26", label: "AGU26", kind: "conference", title: "AGU Annual Meeting 2026", where: "Moscone Center, San Francisco", start: "2026-12-07", end: "2026-12-11", role: "attending", url: "https://www.agu.org/annual-meeting" },
     { id: "dh", label: "Discover Hazards", kind: "paper", title: "Geology-aware, patch-based deep learning for flood susceptibility mapping", where: "Discover Hazards (Springer Nature)", role: "accepted, in production · doi:10.1007/s44475-026-00077-6", badge: "in press", url: "https://link.springer.com/journal/44475" }
   ],
@@ -1543,6 +1543,7 @@ const DATA = {
   // Recent highlights for the Dispatch panel beside the bio (newest first). `when` is YYYY-MM or YYYY-MM-DD.
   // Finished `upcoming` items also appear there as "just happened" for 3 weeks after they end.
   recent: [
+    { when: "2026-11-18", kind: "talk", title: "Lightning talk at GIS Day 2026", where: "Research Commons, The Ohio State University" },
     { when: "2026-11", kind: "paper", title: "Flood-susceptibility paper accepted", where: "Discover Hazards · in press" },
     { when: "2026-10", kind: "talk", title: "Presented geoai-datacubes for the BuckAI Observatory", where: "Google | Ohio State partnership announcement" }
   ],
@@ -1569,6 +1570,7 @@ const DATA = {
         { k: "degree",   t: "Ph.D. Earth Science, fully funded", s: "School of Earth Sciences, from Fall 2026" },
         { k: "research", t: "BuckAI Observatory lab with Dr. Joachim Moortgat", s: "GeoAI and Earth-observation pipelines" },
         { k: "talk",     t: "geoai-datacubes presented at the Google | Ohio State partnership announcement", s: "October 2026 · 39 missions, one datacube" },
+        { k: "talk",     t: "Lightning talk at GIS Day 2026", s: "November 2026 · Research Commons" },
         { k: "teaching", t: "Graduate Teaching Assistant", s: "School of Earth Sciences" }
       ] }
   ],
@@ -1593,7 +1595,8 @@ const DATA = {
     { y: 2026.37, type: "job",    label: "GIS Technician, Warren County Stormwater" },
     { y: 2026.42, type: "degree", label: "M.S. complete, GPA 4.0" },
     { y: 2026.62, type: "degree", label: "Ph.D. begins, The Ohio State University" },
-    { y: 2026.75, type: "talk",   label: "geoai-datacubes presented at the Google | Ohio State announcement" }
+    { y: 2026.75, type: "talk",   label: "geoai-datacubes presented at the Google | Ohio State announcement" },
+    { y: 2026.88, type: "talk",   label: "Lightning talk, GIS Day 2026, The Ohio State University" }
   ],
 
   // Spans for the experience timeline (decimal years; end null = ongoing).
@@ -1643,7 +1646,7 @@ const DATA = {
 
   jobs: [
     { id: "osu", short: "Ohio State", when: "Aug 2026 → present", where: "Columbus, OH", title: "Graduate Teaching Assistant · PhD researcher", org: "School of Earth Sciences, The Ohio State University · BuckAI Observatory",
-      bullets: ["Research in the BuckAI Observatory lab (advisor Dr. Joachim Moortgat) on GeoAI and Earth-observation pipelines; presented geoai-datacubes at the Google | Ohio State partnership announcement.",
+      bullets: ["Research in the BuckAI Observatory lab (advisor Dr. Joachim Moortgat) on GeoAI and Earth-observation pipelines; presented geoai-datacubes at the Google | Ohio State partnership announcement and gave a lightning talk at GIS Day 2026 (Research Commons).",
                 "Teaching assistant in the School of Earth Sciences."],
       tools: ["Python", "Earth observation", "Machine learning", "Teaching"] },
     { id: "wc26", short: "Warren Co. 2026", when: "May – Jul 2026", where: "Bowling Green, KY", title: "Geographic Information Systems Technician", org: "Warren County Stormwater",
@@ -1689,6 +1692,7 @@ const DATA = {
   },
 
   talks: [
+    { d: "Nov 2026", t: "Lightning talk, GIS Day 2026", s: "Research Commons, The Ohio State University · talk" },
     { d: "2026", t: "High-resolution machine-learning flood susceptibility mapping, North Fork Kentucky River basin", s: "56th WKU Student Scholar Showcase (in review)" },
     { d: "Dec 2025", t: "Advancing Flood Susceptibility Prediction with Deep Learning", s: "AGU25, New Orleans · poster H21Y" },
     { d: "Sep 2025", t: "Deep Learning for Improved Flood Susceptibility Prediction, Eastern Kentucky", s: "Kentucky GIS Conference (KAMP), Florence, KY · talk" },
@@ -1741,7 +1745,7 @@ const DATA = {
     { k: ["award", "honor", "prize", "outstanding", "scholarship", "grant", "fund"], src: "§ Validation set",
       a: "Outstanding Geoscience Graduate Student 2026 (WKU EEAS), a fully funded PhD at Ohio State, WKU Graduate School and EEAS travel grants ($500 each), and a merit-based scholarship from the Institute of Engineering in 2018." },
     { k: ["conference", "present", "talk", "poster", "agu", "speak"], src: "§ Validation set",
-      a: "Poster at AGU25 in New Orleans (H21Y), a talk at the Kentucky GIS Conference 2025 in Florence, KY, presentations at the WKU Student Scholar Showcase and Data Science Day, and session moderator at KAMP and the Kentucky Stormwater Association conference." },
+      a: "Most recently, a lightning talk at GIS Day 2026 at the Research Commons, The Ohio State University (November 2026). Before that: poster at AGU25 in New Orleans (H21Y), a talk at the Kentucky GIS Conference 2025 in Florence, KY, presentations at the WKU Student Scholar Showcase and Data Science Day, and session moderator at KAMP and the Kentucky Stormwater Association conference." },
     { k: ["open source", "github", "code", "datacube", "repo", "software project"], src: "§ Open source",
       a: "geoai-datacubes (BuckAI Observatory, MIT license) retrieves imagery from 39 satellite missions through a single interface and harmonizes it into aligned datacubes. Samir is a contributor and helps maintain it. github.com/buckai-observatory/geoai-datacubes" },
     { k: ["next", "upcoming", "coming up", "future", "agu26", "agu 2026", "san francisco", "plans", "soon"], src: "§ Incoming", a: null },
@@ -1900,7 +1904,11 @@ function drawLoss(hover = null) {
     for (const u of UPCOMING) {
       if (u.y == null) continue; const pu = pAt(u.y); if (pu > pe || pu < 0 || pu > 1) continue;
       const lane = UPCOMING.filter(o => o.y != null && o.y < u.y && Math.abs(pAt(o.y) - pu) < 0.03).length;
-      const x = X(pu), base = Y(lossAt(pu).train), y = base - 52 - lane * 20;
+      const x = X(pu), base = Y(lossAt(pu).train);
+      // clear any milestone stack drawn near this x (milestones sit at train - 16 - lane*15)
+      const near = MS.filter(m => m.p <= pe && Math.abs(X(m.p) - x) < 14);
+      const top = near.length ? Math.min(...near.map(m => Y(lossAt(m.p).train) - 16 - m.lane * 15)) - 20 : base - 52;
+      const y = Math.min(base - 52, top) - lane * 20;
       c.save(); c.strokeStyle = amber; c.globalAlpha = .7; c.setLineDash([2, 3]); c.lineWidth = 1; c.beginPath(); c.moveTo(x, y + 8); c.lineTo(x, base - 4); c.stroke(); c.restore();
       c.beginPath(); c.arc(x, y, 7, 0, Math.PI * 2); c.fillStyle = panel; c.fill(); c.lineWidth = 2.2; c.strokeStyle = amber; c.stroke();
       c.beginPath(); c.arc(x, y, 2.4, 0, Math.PI * 2); c.fillStyle = amber; c.fill();
