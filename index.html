@@ -1402,7 +1402,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     <div class="val3">
       <div class="card"><h3>Talks and posters</h3><div class="list" id="talks"></div></div>
       <div class="card"><h3>Awards and funding</h3><div id="awards"></div></div>
-      <div class="card"><h3>Training and certification</h3><div class="list" id="certs"></div>
+      <div class="card"><h3>Programs, training and certification</h3><div class="list" id="certs"></div>
         <h3 style="margin-top:22px">Affiliations</h3><p id="affil"></p></div>
     </div>
   </div>
@@ -1529,8 +1529,9 @@ const DATA = {
       { k: "ok",   m: "M.S. complete · GPA 4.0 · thesis: geology-aware patch CNN for flood susceptibility" },
       { k: "ok",   m: "ACCEPTED · geology-aware deep learning for flood susceptibility · Discover Hazards", feat: "Discover Hazards paper" },
       { k: "load", m: "PhD Earth Science · The Ohio State University · BuckAI Observatory (Dr. Joachim Moortgat)", feat: "GeoAI" },
-      { k: "ok",   m: "geoai-datacubes presented at Google | Ohio State partnership announcement", feat: "EO datacubes" },
-      { k: "ok",   m: "lightning talk · GIS Day 2026 · Research Commons, The Ohio State University" } ] }
+      { k: "fit",  m: "AWS Research Day · Ohio State · hands-on Amazon Quick Suite + Kiro", feat: "AWS cloud" },
+      { k: "ok",   m: "invited guest · Google | Ohio State partnership announcement · presented geoai-datacubes", feat: "EO datacubes" },
+      { k: "ok",   m: "lightning talk · GIS Day 2026 · geology-aware, neighborhood-based deep learning for flood susceptibility" } ] }
   ],
 
   // Coming up. Shown as a pop-up in the training window, a hollow marker on the forecast part of the loss curve,
@@ -1571,7 +1572,7 @@ const DATA = {
         { k: "degree",   t: "Ph.D. Earth Science, fully funded", s: "School of Earth Sciences, from Fall 2026" },
         { k: "research", t: "BuckAI Observatory lab with Dr. Joachim Moortgat", s: "GeoAI and Earth-observation pipelines" },
         { k: "talk",     t: "geoai-datacubes presented at the Google | Ohio State partnership announcement", s: "October 2026 · 39 missions, one datacube" },
-        { k: "talk",     t: "Lightning talk at GIS Day 2026", s: "November 2026 · Research Commons" },
+        { k: "talk",     t: "Lightning talk at GIS Day 2026", s: "November 2026 · geology-aware deep learning for flood susceptibility" },
         { k: "teaching", t: "Graduate Teaching Assistant", s: "School of Earth Sciences" }
       ] }
   ],
@@ -1597,8 +1598,9 @@ const DATA = {
     { y: 2026.37, type: "job",    label: "GIS Technician, Warren County Stormwater" },
     { y: 2026.42, type: "degree", label: "M.S. complete, GPA 4.0" },
     { y: 2026.62, type: "degree", label: "Ph.D. begins, The Ohio State University" },
-    { y: 2026.75, type: "talk",   label: "geoai-datacubes presented at the Google | Ohio State announcement" },
-    { y: 2026.88, type: "talk",   label: "Lightning talk, GIS Day 2026, The Ohio State University" }
+    { y: 2026.73, type: "award",  label: "AWS Research Day, The Ohio State University" },
+    { y: 2026.75, type: "talk",   label: "Invited guest, Google | Ohio State announcement: presented geoai-datacubes" },
+    { y: 2026.88, type: "talk",   label: "GIS Day 2026 lightning talk: geology-aware deep learning for flood susceptibility" }
   ],
 
   // Spans for the experience timeline (decimal years; end null = ongoing).
@@ -1694,7 +1696,7 @@ const DATA = {
   },
 
   talks: [
-    { d: "Nov 2026", t: "Lightning talk, GIS Day 2026", s: "Research Commons, The Ohio State University · talk" },
+    { d: "Nov 2026", t: "Mapping Flood Susceptibility in a Confined Appalachian Watershed: Geology-Aware, Neighborhood-Based Deep Learning", s: "GIS Day 2026 · Research Commons, The Ohio State University · lightning talk" },
     { d: "Apr 2026", t: "High-resolution Machine Learning-based Flood Susceptibility Mapping in the North Fork Kentucky River Basin, Eastern Kentucky", s: "56th WKU Student Scholar Showcase · talk" },
     { d: "Dec 2025", t: "Advancing Flood Susceptibility Prediction with Deep Learning", s: "AGU25, New Orleans · poster H21Y" },
     { d: "Sep 2025", t: "Deep Learning for Improved Flood Susceptibility Prediction, Eastern Kentucky", s: "Kentucky GIS Conference (KAMP), Florence, KY · talk" },
@@ -1712,6 +1714,8 @@ const DATA = {
   ],
 
   certs: [
+    { d: "Oct 2026", t: "Google | Ohio State partnership announcement", s: "invited guest · presented geoai-datacubes for the BuckAI Observatory" },
+    { d: "Sep 2026", t: "AWS Research Day, The Ohio State University", s: "hands-on with Amazon Quick Suite and Kiro · secure cloud workflows for research" },
     { d: "Oct 2024", t: "Supervised Machine Learning: Regression and Classification · Advanced Learning Algorithms", s: "DeepLearning.AI & Stanford University" },
     { d: "Nov 2022", t: "GNSS workshop", s: "Centre for Spatial Information Science, University of Tokyo & ICG" },
     { d: "Jul 2022", t: "DGPS and Terrestrial LiDAR Scanner", s: "CSSGS, supported by the University Grants Commission" },
@@ -1747,7 +1751,7 @@ const DATA = {
     { k: ["award", "honor", "prize", "outstanding", "scholarship", "grant", "fund"], src: "§ Validation set",
       a: "Outstanding Geoscience Graduate Student 2026 (WKU EEAS), a fully funded PhD at Ohio State, WKU Graduate School and EEAS travel grants ($500 each), and a merit-based scholarship from the Institute of Engineering in 2018." },
     { k: ["conference", "present", "talk", "poster", "agu", "speak"], src: "§ Validation set",
-      a: "Most recently, a lightning talk at GIS Day 2026 at the Research Commons, The Ohio State University (November 2026). Before that: poster at AGU25 in New Orleans (H21Y), a talk at the Kentucky GIS Conference 2025 in Florence, KY, presentations at the WKU Student Scholar Showcase and Data Science Day, and session moderator at KAMP and the Kentucky Stormwater Association conference." },
+      a: "Most recently, a lightning talk at GIS Day 2026 at the Research Commons, The Ohio State University (November 2026): \"Mapping Flood Susceptibility in a Confined Appalachian Watershed: Geology-Aware, Neighborhood-Based Deep Learning.\" Before that: poster at AGU25 in New Orleans (H21Y), a talk at the Kentucky GIS Conference 2025 in Florence, KY, presentations at the WKU Student Scholar Showcase and Data Science Day, and session moderator at KAMP and the Kentucky Stormwater Association conference." },
     { k: ["open source", "github", "code", "datacube", "repo", "software project"], src: "§ Open source",
       a: "geoai-datacubes (BuckAI Observatory, MIT license) retrieves imagery from 39 satellite missions through a single interface and harmonizes it into aligned datacubes. Samir is a contributor and helps maintain it. github.com/buckai-observatory/geoai-datacubes" },
     { k: ["next", "upcoming", "coming up", "future", "agu26", "agu 2026", "san francisco", "plans", "soon"], src: "§ Incoming", a: null },
@@ -1757,8 +1761,10 @@ const DATA = {
       a: "Survey-grade field work is a strength: RTK GNSS with Trimble R2 receivers and KY CORS corrections (sub-centimeter), DGPS and terrestrial LiDAR training, drone photogrammetry with GNSS control in Agisoft Metashape, total-station hydrographic surveys, and 3-D scanning." },
     { k: ["from", "nepal", "background", "origin", "born", "home"], src: "§ Dataset",
       a: "He is from Nepal and studied geomatics engineering in Pokhara before moving to Kentucky for his master's and to Ohio for the PhD." },
-    { k: ["certif", "training", "course", "deeplearning", "stanford"], src: "§ Validation set",
-      a: "DeepLearning.AI/Stanford Supervised Machine Learning and Advanced Learning Algorithms (2024); GNSS workshop with the University of Tokyo's CSIS and ICG (2022); DGPS and terrestrial LiDAR scanner training (2022); cloud-based satellite analysis for flood monitoring; Residential Climate Training (2021)." }
+    { k: ["aws", "amazon", "google", "cloud", "kiro", "industry", "partnership"], src: "§ Validation set",
+      a: "He attended AWS Research Day at Ohio State (September 2026), working hands-on with Amazon Quick Suite and Kiro and learning how AWS supports secure research workflows. In October 2026 he was an invited guest at the Google | Ohio State partnership announcement, where he presented geoai-datacubes on behalf of the BuckAI Observatory lab." },
+    { k: ["certif", "training", "course", "deeplearning", "stanford", "program", "workshop", "event"], src: "§ Validation set",
+      a: "At Ohio State: AWS Research Day (September 2026, hands-on with Amazon Quick Suite and Kiro) and the Google | Ohio State partnership announcement (October 2026, invited guest, presented geoai-datacubes). Earlier: DeepLearning.AI/Stanford Supervised Machine Learning and Advanced Learning Algorithms (2024); GNSS workshop with the University of Tokyo's CSIS and ICG (2022); DGPS and terrestrial LiDAR scanner training (2022); cloud-based satellite analysis for flood monitoring; Residential Climate Training (2021)." }
   ],
   suggestions: ["What\u2019s coming up next?", "What does he research?", "Which tools does he use?", "Where is he now?", "Has he published?", "Is he open to collaboration?", "Tell me about the field work"]
 };
@@ -2208,7 +2214,7 @@ const FIGS = {
     <h2>Experience</h2>${DATA.jobs.map(j => row(j.when, j.title, j.org + " · " + j.where, j.bullets.concat(j.more || []))).join("")}
     <h2>Skills</h2>${Object.entries(DATA.skillGroups).map(([g, t]) => `<p class="inline"><b>${esc(g)}:</b> ${t.map(esc).join(", ")}</p>`).join("")}
     <div class="two"><div><h2>Presentations & service</h2>${DATA.talks.map(t => row(t.d, t.t, t.s)).join("")}</div>
-    <div><h2>Awards & funding</h2>${DATA.awards.map(a => row("", a.t, a.s)).join("")}<h2>Training & certification</h2>${DATA.certs.map(c => row(c.d, c.t, c.s)).join("")}</div></div>
+    <div><h2>Awards & funding</h2>${DATA.awards.map(a => row("", a.t, a.s)).join("")}<h2>Programs, training & certification</h2>${DATA.certs.map(c => row(c.d, c.t, c.s)).join("")}</div></div>
     <h2>Selected projects</h2><p class="inline">${DATA.projects.map(p => esc(p.title)).join(" · ")}</p>
     <h2>Outreach</h2>${DATA.outreach.map(o => row("", o.t, o.s)).join("")}
     <h2>Affiliations</h2><p class="inline">${DATA.affiliations.map(esc).join(" · ")}</p>
