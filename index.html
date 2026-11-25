@@ -1531,6 +1531,7 @@ const DATA = {
       { k: "load", m: "PhD Earth Science · The Ohio State University · BuckAI Observatory (Dr. Joachim Moortgat)", feat: "GeoAI" },
       { k: "fit",  m: "AWS Research Day · Ohio State · hands-on Amazon Quick Suite + Kiro", feat: "AWS cloud" },
       { k: "ok",   m: "invited guest · Google | Ohio State partnership announcement · presented geoai-datacubes", feat: "EO datacubes" },
+      { k: "fit",  m: "Python HEC-RAS 2D geometry preprocessing · mesh + hydraulic property tables · within 0.01 ft of HEC-RAS · Linux HPC", feat: "HEC-RAS 2D" },
       { k: "ok",   m: "lightning talk · GIS Day 2026 · geology-aware, neighborhood-based deep learning for flood susceptibility" } ] }
   ],
 
@@ -1571,6 +1572,7 @@ const DATA = {
       items: [
         { k: "degree",   t: "Ph.D. Earth Science, fully funded", s: "School of Earth Sciences, from Fall 2026" },
         { k: "research", t: "BuckAI Observatory lab with Dr. Joachim Moortgat", s: "GeoAI and Earth-observation pipelines" },
+        { k: "research", t: "Python HEC-RAS 2D geometry preprocessing", s: "matches HEC-RAS within 0.01 ft · automated 2D flood modeling on Linux HPC" },
         { k: "talk",     t: "geoai-datacubes presented at the Google | Ohio State partnership announcement", s: "October 2026 · 39 missions, one datacube" },
         { k: "talk",     t: "Lightning talk at GIS Day 2026", s: "November 2026 · geology-aware deep learning for flood susceptibility" },
         { k: "teaching", t: "Graduate Teaching Assistant", s: "School of Earth Sciences" }
@@ -1625,6 +1627,9 @@ const DATA = {
   ],
 
   research: [
+    { short: "HEC-RAS 2D", title: "Python HEC-RAS 2D geometry preprocessing (current)",
+      body: "I'm developing an independent Python implementation of HEC-RAS 2D geometry preprocessing: mesh generation and the hydraulic property tables HEC-RAS builds for every cell and face. It reproduces HEC-RAS results to within 0.01 ft, which means 2D flood models can be built and run automatically on Linux HPC clusters, without the HEC-RAS GUI or Windows.",
+      tools: ["Python", "HEC-RAS 2D", "2D mesh generation", "Linux / HPC", "LiDAR / DEM"], fig: "mesh" },
     { short: "Flood DL", title: "Geology-aware deep learning for flood susceptibility",
       body: "Patch-based convolutional networks trained on the North Fork Kentucky River basin, a confined Appalachian watershed hit by the catastrophic July 2022 floods. Inputs: LiDAR-derived DEM and geomorphic indices, Sentinel-2 land cover and NDVI, soil properties and PRISM rainfall; the geology-aware design conditions the model on bedrock and landform context rather than treating terrain as texture. Presented at AGU25 and the Kentucky GIS Conference; accepted for publication in Discover Hazards (2026).",
       tools: ["Deep learning (CNN)", "Python", "ArcGIS Pro", "LiDAR / DEM", "Sentinel-2", "PRISM", "Remote sensing", "Machine learning"], fig: "cnn" },
@@ -1650,9 +1655,10 @@ const DATA = {
 
   jobs: [
     { id: "osu", short: "Ohio State", when: "Aug 2026 → present", where: "Columbus, OH", title: "Graduate Teaching Assistant · PhD researcher", org: "School of Earth Sciences, The Ohio State University · BuckAI Observatory",
-      bullets: ["Research in the BuckAI Observatory lab (advisor Dr. Joachim Moortgat) on GeoAI and Earth-observation pipelines; presented geoai-datacubes at the Google | Ohio State partnership announcement and gave a lightning talk at GIS Day 2026 (Research Commons).",
+      bullets: ["Developing an independent Python implementation of HEC-RAS 2D geometry preprocessing (mesh generation and hydraulic property tables) that reproduces HEC-RAS results to within 0.01 ft, enabling automated 2D flood modeling on Linux HPC without the HEC-RAS GUI or Windows.",
+                "Research in the BuckAI Observatory lab (advisor Dr. Joachim Moortgat) on GeoAI and Earth-observation pipelines; presented geoai-datacubes at the Google | Ohio State partnership announcement and gave a lightning talk at GIS Day 2026 (Research Commons).",
                 "Teaching assistant in the School of Earth Sciences."],
-      tools: ["Python", "Earth observation", "Machine learning", "Teaching"] },
+      tools: ["Python", "HEC-RAS 2D", "2D mesh generation", "Linux / HPC", "Earth observation", "Machine learning", "Teaching"] },
     { id: "wc26", short: "Warren Co. 2026", when: "May – Jul 2026", where: "Bowling Green, KY", title: "Geographic Information Systems Technician", org: "Warren County Stormwater",
       bullets: ["Developed and maintained stormwater GIS data in ArcGIS Enterprise; QA/QC for accuracy and integrity.",
                 "Modified layers and built interactive forms and pop-ups for web mapping applications; field validation of geographic data."],
@@ -1690,7 +1696,8 @@ const DATA = {
 
   skillGroups: {
     "GIS platforms": ["ArcGIS Pro", "ArcGIS Enterprise", "ArcGIS Online", "ArcGIS Field Maps", "ArcGIS Experience Builder", "ENVI", "Google Earth Engine", "QGIS"],
-    "Programming & data": ["Python", "SQL", "Arcade", "R", "Deep learning (CNN)", "Machine learning"],
+    "Programming & data": ["Python", "SQL", "Arcade", "R", "Deep learning (CNN)", "Machine learning", "Linux / HPC"],
+    "Hydraulic modeling": ["HEC-RAS 2D", "2D mesh generation"],
     "Remote sensing": ["Remote sensing", "LiDAR / DEM", "Sentinel-2", "Earth observation", "Photogrammetry", "ERA5"],
     "Field & lab": ["RTK GNSS", "GNSS", "UAV / drone", "Total station", "Field data collection", "3-D scanning"]
   },
@@ -1735,7 +1742,9 @@ const DATA = {
   // Retrieval table for the "query the model" box. Keys are lowercase stems.
   qa: [
     { k: ["research", "work on", "study", "thesis", "flood", "deep learning", "cnn", "what does"], src: "§ Research",
-      a: "His core research is deep learning for flood susceptibility mapping: a geology-aware, patch-based CNN trained on the North Fork Kentucky River basin using LiDAR DEM derivatives, Sentinel-2 land cover and NDVI, soils and PRISM rainfall. That work is accepted in Discover Hazards (2026). Earlier work applied RUSLE to soil loss in the same basin (published 2025). At Ohio State he contributes to and helps maintain geoai-datacubes, the BuckAI Observatory's multi-mission Earth-observation pipeline." },
+      a: "His core research is deep learning for flood susceptibility mapping: a geology-aware, patch-based CNN trained on the North Fork Kentucky River basin using LiDAR DEM derivatives, Sentinel-2 land cover and NDVI, soils and PRISM rainfall. That work is accepted in Discover Hazards (2026). Earlier work applied RUSLE to soil loss in the same basin (published 2025). At Ohio State he is developing an independent Python implementation of HEC-RAS 2D geometry preprocessing (mesh generation and hydraulic property tables) that matches HEC-RAS within 0.01 ft, and he contributes to and helps maintain geoai-datacubes, the BuckAI Observatory's multi-mission Earth-observation pipeline." },
+    { k: ["hec-ras", "hec ras", "hecras", "hydraulic", "2d model", "mesh", "hpc", "linux", "current project", "working on now"], src: "§ Research",
+      a: "His current project is an independent Python implementation of HEC-RAS 2D geometry preprocessing: mesh generation and the hydraulic property tables for each cell and face. It reproduces HEC-RAS results to within 0.01 ft, so 2D flood models can be built and run automatically on Linux HPC without the HEC-RAS GUI or Windows." },
     { k: ["tool", "software", "stack", "arcgis", "python", "skills", "program", "language", "esri", "envi", "earth engine", "gee"], src: "§ Feature importance",
       a: "The core geospatial stack: ArcGIS Pro, Enterprise, Online, Field Maps and Experience Builder, ENVI for image analysis, and Google Earth Engine for cloud-scale remote sensing; Python (ArcPy), SQL, Arcade and R; QGIS; Trimble R2 RTK GNSS, UAV/drone systems and 3-D scanning. On the modeling side: CNNs, supervised ML, remote sensing and LiDAR/DEM analysis." },
     { k: ["where", "now", "currently", "location", "based", "live", "ohio", "osu"], src: "§ Dataset",
@@ -2051,6 +2060,23 @@ const FIGS = {
     <text class="eq" x="400" y="58">P</text>
     ${[[22, "soil loss", "t·ha⁻¹·yr⁻¹"], [100, "erosivity", "PRISM rain"], [170, "erodibility", "SSURGO"], [240, "slope length", "LiDAR DEM"], [330, "cover", "land cover"], [400, "practice", "conservation"]].map(([x, a, b]) => `<line class="tick" x1="${x + 8}" y1="66" x2="${x + 8}" y2="80"/><text class="lab b" x="${x}" y="94">${a}</text><text class="lab" x="${x}" y="108">${b}</text>`).join("")}
     <text class="lab" x="22" y="136">computed cell by cell across the North Fork Kentucky River basin, then mapped</text></svg>`,
+  mesh: `<svg viewBox="0 0 560 150" role="img" aria-label="A terrain surface becomes a 2D computational mesh, and each cell and face gets elevation-based hydraulic property tables that match HEC-RAS within 0.01 feet">
+    <defs><linearGradient id="demg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent-soft)"/><stop offset="1" stop-color="var(--panel-2)"/></linearGradient></defs>
+    <path class="ras" d="M22 46 l70 -16 l46 10 l-70 16 z" fill="url(#demg)"/><path class="ras" d="M22 46 l0 34 l46 10 l0 -34 z" fill="var(--panel-2)"/><path class="ras" d="M68 56 l70 -16 l0 34 l-70 16 z" fill="var(--panel)"/>
+    <path d="M30 44 q24 -8 44 2 t50 -4" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 2"/>
+    <text class="lab b" x="22" y="108">terrain + breaklines</text><text class="lab" x="22" y="122">LiDAR DEM, land cover</text>
+    <path class="arrow" d="M150 62 L176 62"/><text class="lab" x="163" y="52" text-anchor="middle">mesh</text>
+    <g transform="translate(184 26)">${[0, 1, 2, 3].map(r => [0, 1, 2, 3, 4].map(c => `<rect class="box${r === 1 && c === 2 ? " acc" : ""}" x="${c * 17}" y="${r * 17}" width="17" height="17" rx="0"/>`).join("")).join("")}
+      <path d="M0 50 L30 38 L60 26 L85 20" fill="none" stroke="var(--accent)" stroke-width="1.4"/></g>
+    <text class="lab b" x="184" y="108">2D cells · faces</text><text class="lab" x="184" y="122">aligned to breaklines</text>
+    <path class="arrow" d="M280 62 L306 62"/><text class="lab" x="293" y="52" text-anchor="middle">tables</text>
+    <g transform="translate(318 22)"><line class="tick" x1="0" y1="0" x2="0" y2="70"/><line class="tick" x1="0" y1="70" x2="90" y2="70"/>
+      <path d="M0 70 C20 69 34 60 46 44 S70 8 90 2" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+      <text class="lab" x="4" y="9">volume</text><text class="lab" x="58" y="82">elevation</text></g>
+    <text class="lab b" x="318" y="118">hydraulic property tables</text><text class="lab" x="318" y="132">cell volume · face area</text>
+    <text class="lab b" x="440" y="40">≤ 0.01 ft</text><text class="lab" x="440" y="54">vs. HEC-RAS</text>
+    <text class="lab b" x="440" y="80">Linux HPC</text><text class="lab" x="440" y="94">no GUI · no Windows</text>
+    <text class="lab" x="22" y="142">geometry preprocessing in Python: 2D flood runs scripted end to end</text></svg>`,
   cube: `<svg viewBox="0 0 520 150" role="img" aria-label="Several satellites feed one harmonised datacube with axes for missions, time and bands">
     ${[[40, 34], [70, 22], [100, 40], [60, 60], [95, 70]].map(([x, y]) => `<g class="sat" transform="translate(${x} ${y})"><rect x="-3" y="-3" width="6" height="6"/><rect x="-11" y="-1.5" width="6" height="3" opacity=".7"/><rect x="5" y="-1.5" width="6" height="3" opacity=".7"/></g>`).join("")}
     <text class="lab b" x="30" y="100">39 missions</text><text class="lab" x="30" y="114">own bands, grids, providers</text>
